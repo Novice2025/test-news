@@ -37,10 +37,10 @@
             z-index: -1; /* Behind content */
             /* Creates tiny white dots (stars) with varying sizes */
             background: radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
-                                radial-gradient(1.5px 1.5px at 60px 70px, #eee, rgba(0,0,0,0)),
-                                radial-gradient(2.5px 2.5px at 100px 50px, #eee, rgba(0,0,0,0)),
-                                radial-gradient(2px 2px at 150px 20px, #eee, rgba(0,0,0,0)),
-                                radial-gradient(1.8px 1.8px at 180px 90px, #eee, rgba(0,0,0,0));
+                                 radial-gradient(1.5px 1.5px at 60px 70px, #eee, rgba(0,0,0,0)),
+                                 radial-gradient(2.5px 2.5px at 100px 50px, #eee, rgba(0,0,0,0)),
+                                 radial-gradient(2px 2px at 150px 20px, #eee, rgba(0,0,0,0)),
+                                 radial-gradient(1.8px 1.8px at 180px 90px, #eee, rgba(0,0,0,0));
             background-size: 200px 200px; /* Size of the star pattern */
             animation: starfieldAnimation 120s linear infinite; /* Slow, continuous movement */
         }
@@ -880,387 +880,258 @@
             line-height: 1.7;
             margin-bottom: 25px;
         }
-
-        #headlinesModalContent button {
-            background-color: #00eaff;
-            color: #0d1734;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: 700;
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-            box-shadow: 0 0 12px rgba(0, 220, 255, 0.8);
-        }
-
-        #headlinesModalContent button:hover {
-            background-color: #66ffff;
-            transform: translateY(-3px);
-            box-shadow: 0 0 20px rgba(0, 255, 255, 1);
-        }
     </style>
 </head>
 <body>
+
     <header>
         <div class="container">
-            <h1>Global Pulse</h1>
-            <p class="subtitle">Your Weekly Digest for English Learners</p>
-            <p class="tagline">Navigate the world's news, expand your vocabulary, and master English!</p>
+            <h1>Global Headlines for English Learners</h1>
+            <p class="subtitle">Your Weekly Digest of World News, Simplified.</p>
+            <p class="tagline">Enhance your English while staying informed about the world's most important events.</p>
             <p class="date">July 26, 2025</p>
-            <p class="purpose-aim">This digest aims to help English learners improve their comprehension and vocabulary through current global events.</p>
+            <p class="purpose-aim">We break down complex global news into digestible summaries, focusing on key vocabulary and grammar to accelerate your English learning journey.</p>
             <div class="header-connect">
-                <a href="#vocabulary-section"><i class="fas fa-book"></i> Vocabulary</a>
-                <a href="#exercises-section"><i class="fas fa-brain"></i> Exercises</a>
-                <a href="#"><i class="fas fa-envelope"></i> Subscribe</a>
+                <a href="https://wa.me/5511986108003" target="_blank" class="header-button"><i class="fab fa-whatsapp"></i> Contact Us</a>
             </div>
-            <button class="header-button" onclick="openHeadlinesModal()">View All Headlines</button>
         </div>
     </header>
 
     <main>
         <div class="container">
+
             <section class="more-headlines">
-                <h2>Top Global Stories</h2>
-                
+                <h2>Other Important Headlines This Week</h2>
+
                 <div class="news-item">
-                    <img src="https://via.placeholder.com/160x110?text=Thailand+Cambodia" alt="Thailand-Cambodia Border" class="news-item-image">
+                    <img src="https://via.placeholder.com/160x110/3498db/ffffff?text=Tech" alt="Tech News Image" class="news-item-image">
                     <div class="news-item-content">
-                        <p class="original-headline">Original Headline: Deadly Border Clashes Continue Between Thailand and Cambodia</p>
-                        <button class="headline-button" onclick="toggleSummary(this)">Thailand-Cambodia Border Clashes Escalate</button>
-                        <div class="news-summary-container">
-                            <p class="news-summary-short">Deadly clashes continue for a third day along the Thai-Cambodian border, leading to significant casualties and thousands fleeing their homes.</p>
-                            <p class="news-summary-full">For the third consecutive day, violent clashes have erupted along the border separating Thailand and Cambodia. The ongoing conflict has resulted in numerous casualties and forced thousands of residents to evacuate their homes. The severity of the situation has prompted the **UN Security Council** to hold an emergency meeting, while **Malaysia** has stepped forward with an offer to mediate and help resolve the escalating tensions between the two nations.</p>
-                            <button class="read-more-button" onclick="toggleSummary(this)">Read More</button>
+                        <p class="original-headline">Original: "Giant Tech Company Unveils Breakthrough AI Chip"</p>
+                        <button class="headline-button" onclick="toggleSummary('summary1')">Tech Giant Reveals Powerful New AI Chip</button>
+                        <div id="summary1" class="news-summary-container">
+                            <p class="news-summary-short">A major technology company has announced a groundbreaking new artificial intelligence chip, promising to speed up data processing and enable more advanced AI applications.</p>
+                            <p class="news-summary-full">A significant technology company, known for its innovation, has officially announced the launch of a revolutionary new artificial intelligence chip. This new hardware is expected to dramatically accelerate data processing capabilities, which will allow for the development and implementation of even more sophisticated and powerful AI applications across various industries. Experts believe this could set a new standard for AI technology.</p>
+                            <button class="read-more-button" onclick="toggleSummary('summary1')">Read More</button>
+                            <button class="read-aloud-button" onclick="readText('Tech Giant Reveals Powerful New AI Chip. A major technology company has announced a groundbreaking new artificial intelligence chip, promising to speed up data processing and enable more advanced AI applications. A significant technology company, known for its innovation, has officially announced the launch of a revolutionary new artificial intelligence chip. This new hardware is expected to dramatically accelerate data processing capabilities, which will allow for the development and implementation of even more sophisticated and powerful AI applications across various industries. Experts believe this could set a new standard for AI technology.')"><i class="fas fa-volume-up"></i></button>
                         </div>
-                        <button class="read-aloud-button" onclick="readAloud(this)">
-                            <i class="fas fa-volume-up"></i> Read Aloud
-                        </button>
                     </div>
                 </div>
 
                 <div class="news-item">
-                    <img src="https://via.placeholder.com/160x110?text=Gaza+Aid" alt="Gaza Aid Relief" class="news-item-image">
+                    <img src="https://via.placeholder.com/160x110/27ae60/ffffff?text=Environment" alt="Environment News Image" class="news-item-image">
                     <div class="news-item-content">
-                        <p class="original-headline">Original Headline: Humanitarian Crisis Deepens in Gaza Amid Stalled Ceasefire Talks</p>
-                        <button class="headline-button" onclick="toggleSummary(this)">Gaza Humanitarian Crisis Deepens</button>
-                        <div class="news-summary-container">
-                            <p class="news-summary-short">Aid agencies warn of mass starvation in Gaza as ceasefire talks remain stalled, with reports of children dying from hunger.</p>
-                            <p class="news-summary-full">The humanitarian situation in Gaza has reached critical levels, with aid agencies issuing dire warnings about **mass starvation**. Disturbing reports of children succumbing to hunger are emerging as **ceasefire talks** continue to face significant obstacles. There are growing international demands for an immediate lifting of the blockade to allow crucial aid to reach the besieged population.</p>
-                            <button class="read-more-button" onclick="toggleSummary(this)">Read More</button>
+                        <p class="original-headline">Original: "Global Leaders Pledge Billions for Climate Initiatives"</p>
+                        <button class="headline-button" onclick="toggleSummary('summary2')">World Leaders Commit Funds to Fight Climate Change</button>
+                        <div id="summary2" class="news-summary-container">
+                            <p class="news-summary-short">Leaders from around the world have pledged billions of dollars towards new initiatives aimed at combating climate change and promoting sustainable development.</p>
+                            <p class="news-summary-full">During a recent international summit, global leaders made significant financial commitments, pledging billions of dollars to fund new initiatives designed to tackle climate change. These efforts will focus on reducing carbon emissions, investing in renewable energy sources, and promoting sustainable practices worldwide. The move is seen as a crucial step in addressing the urgent environmental crisis facing the planet.</p>
+                            <button class="read-more-button" onclick="toggleSummary('summary2')">Read More</button>
+                            <button class="read-aloud-button" onclick="readText('World Leaders Commit Funds to Fight Climate Change. Leaders from around the world have pledged billions of dollars towards new initiatives aimed at combating climate change and promoting sustainable development. During a recent international summit, global leaders made significant financial commitments, pledging billions of dollars to fund new initiatives designed to tackle climate change. These efforts will focus on reducing carbon emissions, investing in renewable energy sources, and promoting sustainable practices worldwide. The move is seen as a crucial step in addressing the urgent environmental crisis facing the planet.')"><i class="fas fa-volume-up"></i></button>
                         </div>
-                        <button class="read-aloud-button" onclick="readAloud(this)">
-                            <i class="fas fa-volume-up"></i> Read Aloud
-                        </button>
                     </div>
                 </div>
 
                 <div class="news-item">
-                    <img src="https://via.placeholder.com/160x110?text=Iran+Attack" alt="Iran Courthouse Attack" class="news-item-image">
+                    <img src="https://via.placeholder.com/160x110/e74c3c/ffffff?text=Economy" alt="Economy News Image" class="news-item-image">
                     <div class="news-item-content">
-                        <p class="original-headline">Original Headline: Courthouse Attack in Iran Kills Six, Including Mother and Child</p>
-                        <button class="headline-button" onclick="toggleSummary(this)">Iran Courthouse Attack Claims Lives</button>
-                        <div class="news-summary-container">
-                            <p class="news-summary-short">Unknown gunmen attacked a courthouse in Zahedan, southeast Iran, killing at least six people, including a mother and child.</p>
-                            <p class="news-summary-full">A tragic incident unfolded in **Zahedan**, a city in southeast Iran, where unknown gunmen launched an attack on a local courthouse. The assault resulted in the deaths of at least six individuals, among them a mother and her child, highlighting the volatile security situation in the region.</p>
-                            <button class="read-more-button" onclick="toggleSummary(this)">Read More</button>
+                        <p class="original-headline">Original: "Inflation Concerns Rise in Key Economies"</p>
+                        <button class="headline-button" onclick="toggleSummary('summary3')">Inflation Worries Grow in Major Economies</button>
+                        <div id="summary3" class="news-summary-container">
+                            <p class="news-summary-short">Economists are expressing increasing concern about rising inflation rates in several of the world's leading economies.</p>
+                            <p class="news-summary-full">Leading economists are observing with growing concern the persistent rise in inflation rates across several of the world's most influential economies. This trend could lead to higher prices for consumers, reduced purchasing power, and potentially impact global economic stability. Central banks are monitoring the situation closely and considering measures to control price increases without hindering economic growth.</p>
+                            <button class="read-more-button" onclick="toggleSummary('summary3')">Read More</button>
+                            <button class="read-aloud-button" onclick="readText('Inflation Worries Grow in Major Economies. Economists are expressing increasing concern about rising inflation rates in several of the world\'s leading economies. Leading economists are observing with growing concern the persistent rise in inflation rates across several of the world\'s most influential economies. This trend could lead to higher prices for consumers, reduced purchasing power, and potentially impact global economic stability. Central banks are monitoring the situation closely and considering measures to control price increases without hindering economic growth.')"><i class="fas fa-volume-up"></i></button>
                         </div>
-                        <button class="read-aloud-button" onclick="readAloud(this)">
-                            <i class="fas fa-volume-up"></i> Read Aloud
-                        </button>
                     </div>
                 </div>
 
-                <div class="news-item">
-                    <img src="https://via.placeholder.com/160x110?text=Taiwan+Vote" alt="Taiwan Voting" class="news-item-image">
-                    <div class="news-item-content">
-                        <p class="original-headline">Original Headline: Taiwan Votes on Recall of Opposition Lawmakers</p>
-                        <button class="headline-button" onclick="toggleSummary(this)">Taiwan Voters Decide Fate of Pro-China Lawmakers</button>
-                        <div class="news-summary-container">
-                            <p class="news-summary-short">Voters in Taiwan are deciding whether to recall 31 China-friendly lawmakers from the opposition party in a closely watched election.</p>
-                            <p class="news-summary-full">A significant election is underway in **Taiwan**, where citizens are casting their votes on whether to **recall** 31 lawmakers belonging to the opposition party. These legislators are perceived as being **China-friendly**, and the outcome of this closely watched election could have considerable implications for Taiwan's political landscape and its relationship with mainland China.</p>
-                            <button class="read-more-button" onclick="toggleSummary(this)">Read More</button>
-                        </div>
-                        <button class="read-aloud-button" onclick="readAloud(this)">
-                            <i class="fas fa-volume-up"></i> Read Aloud
-                        </button>
-                    </div>
-                </div>
-            </section>
-
-            ---
-
-            <section class="brazil-section">
-                <h2>Spotlight: Brazil</h2>
-
-                <div class="news-item">
-                    <img src="https://via.placeholder.com/160x110?text=Brazil+Tariffs" alt="Brazilian Goods" class="news-item-image">
-                    <div class="news-item-content">
-                        <p class="original-headline">Original Headline: Trump's Tariff Threats Loom Over Brazilian Economy</p>
-                        <button class="headline-button" onclick="toggleSummary(this)">Trump's Tariffs Threaten Brazil</button>
-                        <div class="news-summary-container">
-                            <p class="news-summary-short">The looming 50% tariff threatened by President Trump on Brazilian goods remains a major concern.</p>
-                            <p class="news-summary-full">The specter of a **50% tariff** on Brazilian goods, a threat issued by President Trump, continues to hang over Brazil's economy. Brazilian President Lula has indicated a willingness to **negotiate**, emphasizing that the world does not "want an emperor." Analysts caution that these tariffs could severely impact **small-scale coffee producers** in Brazil and potentially push the country to strengthen its economic ties with China.</p>
-                            <button class="read-more-button" onclick="toggleSummary(this)">Read More</button>
-                        </div>
-                        <button class="read-aloud-button" onclick="readAloud(this)">
-                            <i class="fas fa-volume-up"></i> Read Aloud
-                        </button>
-                    </div>
-                </div>
-
-                <div class="news-item">
-                    <img src="https://via.placeholder.com/160x110?text=Bolsonaro+Trial" alt="Jair Bolsonaro" class="news-item-image">
-                    <div class="news-item-content">
-                        <p class="original-headline">Original Headline: Bolsonaro Faces Criminal Trial for Alleged Coup Plot</p>
-                        <button class="headline-button" onclick="toggleSummary(this)">Bolsonaro's Legal Troubles Deepen</button>
-                        <div class="news-summary-container">
-                            <p class="news-summary-short">Former Brazilian President Jair Bolsonaro is on trial for an alleged coup plot and attempting to poison his successor.</p>
-                            <p class="news-summary-full">Former Brazilian President **Jair Bolsonaro** is currently facing a criminal trial. He is accused of an alleged **coup plot** and attempting to poison his successor. The United States has reportedly placed **visa restrictions** on Brazilian officials believed to be involved in what it describes as a "witch-hunt" against Bolsonaro, while Donald Trump has publicly come to his defense.</p>
-                            <button class="read-more-button" onclick="toggleSummary(this)">Read More</button>
-                        </div>
-                        <button class="read-aloud-button" onclick="readAloud(this)">
-                            <i class="fas fa-volume-up"></i> Read Aloud
-                        </button>
-                    </div>
-                </div>
-
-                <div class="news-item">
-                    <img src="https://via.placeholder.com/160x110?text=Brazil+ICJ" alt="International Court of Justice" class="news-item-image">
-                    <div class="news-item-content">
-                        <p class="original-headline">Original Headline: Brazil Joins ICJ "Genocide" Case Against Israel</p>
-                        <button class="headline-button" onclick="toggleSummary(this)">Brazil Joins ICJ Genocide Case</button>
-                        <div class="news-summary-container">
-                            <p class="news-summary-short">Brazil intends to join South Africa's case against Israel at the International Court of Justice, accusing Israel of genocide.</p>
-                            <p class="news-summary-full">Brazil has officially announced its decision to join **South Africa's case against Israel** at the **International Court of Justice (ICJ)**. The case accuses Israel of **genocide**, marking a significant diplomatic move by Brazil on the international stage concerning the ongoing conflict.</p>
-                            <button class="read-more-button" onclick="toggleSummary(this)">Read More</button>
-                        </div>
-                        <button class="read-aloud-button" onclick="readAloud(this)">
-                            <i class="fas fa-volume-up"></i> Read Aloud
-                        </button>
-                    </div>
-                </div>
-            </section>
-
-            ---
-
-            <section class="trump-section">
-                <h2>Spotlight: Donald Trump</h2>
-
-                <div class="news-item">
-                    <img src="https://via.placeholder.com/160x110?text=Trump+Immigration" alt="Trump on Immigration" class="news-item-image">
-                    <div class="news-item-content">
-                        <p class="original-headline">Original Headline: Trump Criticizes European Immigration During Scotland Trip</p>
-                        <button class="headline-button" onclick="toggleSummary(this)">Trump Slams European Immigration</button>
-                        <div class="news-summary-container">
-                            <p class="news-summary-short">During his trip to Scotland, President Trump criticized European leaders over mass immigration, calling it a "horrible invasion."</p>
-                            <p class="news-summary-full">During a recent visit to Scotland, President Trump vocally criticized **European leaders** regarding their immigration policies. He described **mass immigration** as a "horrible invasion" that is "killing" the continent, reiterating his strong stance on border control and national sovereignty.</p>
-                            <button class="read-more-button" onclick="toggleSummary(this)">Read More</button>
-                        </div>
-                        <button class="read-aloud-button" onclick="readAloud(this)">
-                            <i class="fas fa-volume-up"></i> Read Aloud
-                        </button>
-                    </div>
-                </div>
-
-                <div class="news-item">
-                    <img src="https://via.placeholder.com/160x110?text=Trump+Orders" alt="Executive Orders" class="news-item-image">
-                    <div class="news-item-content">
-                        <p class="original-headline">Original Headline: Trump Issues New Executive Orders, Rescinds Others</p>
-                        <button class="headline-button" onclick="toggleSummary(this)">Trump Issues New Executive Orders</button>
-                        <div class="news-summary-container">
-                            <p class="news-summary-short">The Trump administration continues to issue executive orders, including one allowing removal of homeless people from streets.</p>
-                            <p class="news-summary-full">The Trump administration has continued its trend of issuing **executive orders**, including a controversial one that grants cities and states the authority to **remove homeless individuals from public streets**. Additionally, he signed a **rescissions package**, which reportedly slashes billions in foreign aid and funding for public media, reflecting his administration's budgetary priorities.</p>
-                            <button class="read-more-button" onclick="toggleSummary(this)">Read More</button>
-                        </div>
-                        <button class="read-aloud-button" onclick="readAloud(this)">
-                            <i class="fas fa-volume-up"></i> Read Aloud
-                        </button>
-                    </div>
-                </div>
-
-                <div class="news-item">
-                    <img src="https://via.placeholder.com/160x110?text=Epstein+Case" alt="Jeffrey Epstein" class="news-item-image">
-                    <div class="news-item-content">
-                        <p class="original-headline">Original Headline: Epstein Case Revelations Continue to Impact Prominent Figures</p>
-                        <button class="headline-button" onclick="toggleSummary(this)">Epstein Fallout Persists</button>
-                        <div class="news-summary-container">
-                            <p class="news-summary-short">Revelations from the Epstein case continue, with prominent figures, including Bill Clinton, named in Epstein's "birthday book."</p>
-                            <p class="news-summary-full">The ramifications of the **Epstein case** continue to unfold, with ongoing revelations impacting numerous prominent figures. Reports have surfaced naming individuals such as former President **Bill Clinton** in Epstein's "birthday book," leading to renewed public scrutiny. The White House has openly expressed frustration over the extensive media coverage surrounding these developments.</p>
-                            <button class="read-more-button" onclick="toggleSummary(this)">Read More</button>
-                        </div>
-                        <button class="read-aloud-button" onclick="readAloud(this)">
-                            <i class="fas fa-volume-up"></i> Read Aloud
-                        </button>
-                    </div>
-                </div>
-
-                <div class="news-item">
-                    <img src="https://via.placeholder.com/160x110?text=Trump+Tariffs" alt="Trade Negotiations" class="news-item-image">
-                    <div class="news-item-content">
-                        <p class="original-headline">Original Headline: Trump Pushes New Trade Deals, Threatens Tariffs</p>
-                        <button class="headline-button" onclick="toggleSummary(this)">Trump's Trade Offensive</button>
-                        <div class="news-summary-container">
-                            <p class="news-summary-short">Trump is actively pursuing new trade deals and has signaled a willingness to use tariffs as leverage.</p>
-                            <p class="news-summary-full">Donald Trump is actively engaged in pursuing new **trade deals** with various nations, including a potential agreement with Europe. He has clearly indicated his readiness to deploy **tariffs as leverage**, as demonstrated by his recent threats against Brazil and past actions concerning Canada and the Philippines, underscoring his aggressive approach to international trade.</p>
-                            <button class="read-more-button" onclick="toggleSummary(this)">Read More</button>
-                        </div>
-                        <button class="read-aloud-button" onclick="readAloud(this)">
-                            <i class="fas fa-volume-up"></i> Read Aloud
-                        </button>
-                    </div>
-                </div>
-
-                <div class="news-item">
-                    <img src="https://via.placeholder.com/160x110?text=Trump+Judiciary" alt="Legal Challenges" class="news-item-image">
-                    <div class="news-item-content">
-                        <p class="original-headline">Original Headline: Federal Judge Blocks Trump's Birthright Citizenship Restriction</p>
-                        <button class="headline-button" onclick="toggleSummary(this)">Trump's Legal Challenges Mount</button>
-                        <div class="news-summary-container">
-                            <p class="news-summary-short">A federal judge blocked Trump's birthright citizenship restrictions for a third time, indicating a potential Supreme Court clash.</p>
-                            <p class="news-summary-full">President Trump continues to face significant **legal challenges**, with a federal judge having now blocked his **birthright citizenship restrictions** for a third time. This repeated judicial rejection signals a potential high-stakes clash with the **Supreme Court**, as the administration seeks to implement its policy.</p>
-                            <button class="read-more-button" onclick="toggleSummary(this)">Read More</button>
-                        </div>
-                        <button class="read-aloud-button" onclick="readAloud(this)">
-                            <i class="fas fa-volume-up"></i> Read Aloud
-                        </button>
-                    </div>
-                </div>
             </section>
 
             <hr>
 
-            <section id="vocabulary-section" class="exercises-section">
-                <h2>Expand Your Vocabulary</h2>
-                <p>Improve your English with key terms from this week's news. Click to reveal definitions and example sentences!</p>
+            <section class="exercises-section">
+                <h2>Practice Your English!</h2>
+                <div class="exercise-score" id="score">Score: 0/0</div>
 
-                <div class="vocabulary-dropdown">
-                    <details>
-                        <summary class="vocabulary-summary">Global News Vocabulary</summary>
-                        <div class="vocabulary-content">
-                            <ul>
-                                <li><strong>Escalate</strong> (verb): To increase rapidly; to intensify.
-                                    <br><em>Example: Tensions **escalated** quickly after the border incident.</em></li>
-                                <li><strong>Casualties</strong> (noun): Persons killed or injured in a war or accident.
-                                    <br><em>Example: The conflict resulted in a high number of **casualties**.</em></li>
-                                <li><strong>Mediate</strong> (verb): To intervene between people or groups in a dispute to bring about an agreement.
-                                    <br><em>Example: The UN offered to **mediate** the peace talks.</em></li>
-                                <li><strong>Humanitarian Crisis</strong> (noun phrase): A single event or a series of events that are threatening in terms of health, safety, or well-being of a community or large group of people.
-                                    <br><em>Example: The region is experiencing a severe **humanitarian crisis** due to lack of food and water.</em></li>
-                                <li><strong>Stall</strong> (verb): To stop making progress or developing.
-                                    <br><em>Example: Peace negotiations have **stalled** due to disagreements.</em></li>
-                                <li><strong>Blockade</strong> (noun): An act or means of sealing off a place to prevent goods or people from entering or leaving.
-                                    <br><em>Example: The **blockade** has severely restricted the flow of essential supplies.</em></li>
-                                <li><strong>Recall</strong> (verb): To officially order someone to return to a place, or to bring someone back from a political position.
-                                    <br><em>Example: Voters decided to **recall** the representative after public outcry.</em></li>
-                                <li><strong>Pro-China</strong> (adjective): Supporting or favoring China.
-                                    <br><em>Example: The **pro-China** faction pushed for closer economic ties.</em></li>
-                            </ul>
-                        </div>
-                    </details>
-                </div>
-
-                <div class="vocabulary-dropdown">
-                    <details>
-                        <summary class="vocabulary-summary">Brazil & Trump Specific Vocabulary</summary>
-                        <div class="vocabulary-content">
-                            <ul>
-                                <li><strong>Looming</strong> (adjective): Appearing as a shadowy form, especially one that is large or threatening; about to happen.
-                                    <br><em>Example: The **looming** economic recession worried investors.</em></li>
-                                <li><strong>Tariff</strong> (noun): A tax or duty to be paid on a particular class of imports or exports.
-                                    <br><em>Example: The government imposed a new **tariff** on imported steel.</em></li>
-                                <li><strong>Devastate</strong> (verb): To destroy or cause severe damage or suffering to.
-                                    <br><em>Example: The storm could **devastate** the coastal communities.</em></li>
-                                <li><strong>Coup Plot</strong> (noun phrase): A secret plan to overthrow a government.
-                                    <br><em>Example: Security services uncovered a **coup plot** against the president.</em></li>
-                                <li><strong>Witch-hunt</strong> (noun): A campaign directed against a person or group holding unpopular views.
-                                    <br><em>Example: He claimed the investigation was a political **witch-hunt**.</em></li>
-                                <li><strong>Scrutiny</strong> (noun): Critical observation or examination.
-                                    <br><em>Example: The company's accounts are under close **scrutiny**.</em></li>
-                                <li><strong>Ramifications</strong> (noun): A complex or unwelcome consequence of an action or event.
-                                    <br><em>Example: The new policy had unexpected **ramifications** for the entire industry.</em></li>
-                                <li><strong>Leverage</strong> (noun): Power to influence a person or situation.
-                                    <br><em>Example: She used her position to gain **leverage** in the negotiations.</em></li>
-                                <li><strong>Birthright Citizenship</strong> (noun phrase): A legal principle by which a person is granted citizenship of a country by virtue of having been born there.
-                                    <br><em>Example: The debate over **birthright citizenship** is a contentious issue.</em></li>
-                            </ul>
-                        </div>
-                    </details>
-                </div>
-                <p class="discussion-prompt"><strong>Discussion Prompt:</strong> Choose three new words you learned. How can you use them in a sentence related to current events or your daily life?</p>
-            </section>
-
-            ---
-
-            <section id="exercises-section" class="exercises-section">
-                <h2>English Language Exercises</h2>
-                <div class="exercise-score">Score: <span id="currentScore">0</span> / <span id="maxScore">0</span></div>
-
+                <h4>Fill in the Blanks</h4>
                 <div class="exercise-container">
-                    <h4>Exercise 1: Fill-in-the-Blanks (Type the correct word)</h4>
-                    <p class="exercise-question">1. The ongoing conflict could rapidly <input type="text" class="exercise-input" id="q1" data-answer="escalate"> if no agreement is reached. <span id="q1-feedback" class="feedback"></span></p>
-                    <p class="exercise-question">2. Aid agencies are warning of a deepening <input type="text" class="exercise-input" id="q2" data-answer="humanitarian crisis"> in the besieged city. <span id="q2-feedback" class="feedback"></span></p>
-                    <p class="exercise-question">3. President Trump threatened a new <input type="text" class="exercise-input" id="q3" data-answer="tariff"> on imported goods. <span id="q3-feedback" class="feedback"></span></p>
-                    <p class="exercise-question">4. The former president is facing trial for an alleged <input type="text" class="exercise-input" id="q4" data-answer="coup plot">. <span id="q4-feedback" class="feedback"></span></p>
+                    <p class="exercise-question">The government is planning to <input type="text" class="exercise-input" id="blank1" data-answer="implement"> new policies to boost the economy.</p>
+                    <p class="exercise-question">Scientists are working on a <input type="text" class="exercise-input" id="blank2" data-answer="breakthrough"> that could change medicine.</p>
+                    <p class="exercise-question">Many people are concerned about the <input type="text" class="exercise-input" id="blank3" data-answer="impact"> of climate change.</p>
                     <div class="exercise-buttons">
                         <button onclick="checkBlanks()">Check Answers</button>
                         <button onclick="resetBlanks()">Reset</button>
                     </div>
                 </div>
 
+                <h4>Drag and Drop the Words</h4>
                 <div class="exercise-container">
-                    <h4>Exercise 2: Drag and Drop (Match the word to the blank)</h4>
-                    <div class="draggable-words" id="draggableWords">
-                        <div class="draggable-word" draggable="true" data-word="Mediate">Mediate</div>
-                        <div class="draggable-word" draggable="true" data-word="Casualties">Casualties</div>
-                        <div class="draggable-word" draggable="true" data-word="Looming">Looming</div>
-                        <div class="draggable-word" draggable="true" data-word="Blockade">Blockade</div>
+                    <div class="draggable-words" id="draggableWordsContainer">
+                        <div class="draggable-word" draggable="true" data-word="sustainable">sustainable</div>
+                        <div class="draggable-word" draggable="true" data-word="pledged">pledged</div>
+                        <div class="draggable-word" draggable="true" data-word="crisis">crisis</div>
+                        <div class="draggable-word" draggable="true" data-word="accelerate">accelerate</div>
                     </div>
-                    <p class="exercise-question">
-                        1. Malaysia has offered to <span class="droppable-blank" data-correct="Mediate"></span> between the warring nations.
-                    </p>
-                    <p class="exercise-question">
-                        2. The recent clashes resulted in numerous <span class="droppable-blank" data-correct="Casualties"></span> on both sides.
-                    </p>
-                    <p class="exercise-question">
-                        3. The <span class="droppable-blank" data-correct="Looming"></span> threat of tariffs has worried the local businesses.
-                    </p>
-                    <p class="exercise-question">
-                        4. International calls are growing for the lifting of the <span class="droppable-blank" data-correct="Blockade"></span> to allow aid to enter.
-                    </p>
+                    <p class="exercise-question">Global leaders have <span class="droppable-blank" data-correct-word="pledged"></span> to address the climate <span class="droppable-blank" data-correct-word="crisis"></span>.</p>
+                    <p class="exercise-question">The new technology will <span class="droppable-blank" data-correct-word="accelerate"></span> data processing for <span class="droppable-blank" data-correct-word="sustainable"></span> development.</p>
                     <div class="exercise-buttons">
                         <button onclick="checkDragAndDrop()">Check Answers</button>
                         <button onclick="resetDragAndDrop()">Reset</button>
                     </div>
                 </div>
+
             </section>
+
+            <hr>
+
+            <section class="vocabulary-dropdown">
+                <details>
+                    <summary class="vocabulary-summary">Key Vocabulary & Phrases</summary>
+                    <div class="vocabulary-content">
+                        <h4>General Terms</h4>
+                        <ul>
+                            <li><strong>Breakthrough:</strong> A significant discovery or development. (Ex: Scientists made a *breakthrough* in cancer research.)</li>
+                            <li><strong>Initiative:</strong> A new plan or process to achieve something. (Ex: The government launched a new *initiative* to reduce unemployment.)</li>
+                            <li><strong>Combat:</strong> To fight against or oppose. (Ex: They are working to *combat* poverty.)</li>
+                            <li><strong>Sustainable:</strong> Able to be maintained at a certain rate or level; causing little or no damage to the environment and therefore able to continue for a long time. (Ex: Renewable energy is a *sustainable* option.)</li>
+                            <li><strong>Pledge:</strong> A solemn promise or undertaking. (Ex: They *pledged* to donate a portion of their profits.)</li>
+                            <li><strong>Digestible:</strong> Easy to understand or absorb. (Ex: The complex information was presented in a *digestible* format.)</li>
+                        </ul>
+                        <h4>Business & Economy</h4>
+                        <ul>
+                            <li><strong>Inflation:</strong> A general increase in prices and fall in the purchasing value of money. (Ex: High *inflation* can make everyday goods more expensive.)</li>
+                            <li><strong>Purchasing power:</strong> The financial ability to buy products and services. (Ex: Inflation reduces consumers' *purchasing power*.)</li>
+                            <li><strong>Hinder:</strong> To create difficulties for (someone or something), resulting in delay or obstruction. (Ex: Bad weather can *hinder* travel plans.)</li>
+                        </ul>
+                        <h4>Politics & Society</h4>
+                        <ul>
+                            <li><strong>Unveil:</strong> To reveal or announce publicly for the first time. (Ex: The company will *unveil* its new product next month.)</li>
+                            <li><strong>Summit:</strong> A meeting between heads of government. (Ex: World leaders met at the G7 *summit*.)</li>
+                        </ul>
+                    </div>
+                </details>
+            </section>
+
+            <hr>
+
+            <section class="previous-week-digest">
+                <h2>Previous Week's Digest</h2>
+                <p class="date-subheading">July 19, 2025</p>
+
+                <div class="news-item">
+                    <img src="https://via.placeholder.com/160x110/f39c12/ffffff?text=Health" alt="Health News Image" class="news-item-image">
+                    <div class="news-item-content">
+                        <p class="original-headline">Original: "New Vaccine Shows Promising Results in Clinical Trials"</p>
+                        <button class="headline-button" onclick="toggleSummary('prevSummary1')">Vaccine Shows Good Results in Tests</button>
+                        <div id="prevSummary1" class="news-summary-container">
+                            <p class="news-summary-short">A new vaccine has demonstrated encouraging outcomes in its latest clinical trials, offering hope for disease prevention.</p>
+                            <p class="news-summary-full">The clinical trials for a newly developed vaccine have shown highly promising results. This vaccine, designed to combat a specific disease, has successfully passed its initial testing phases, indicating a strong potential for effective disease prevention. Researchers are optimistic about its future impact on global health, pending further trials and regulatory approvals.</p>
+                            <button class="read-more-button" onclick="toggleSummary('prevSummary1')">Read More</button>
+                            <button class="read-aloud-button" onclick="readText('Vaccine Shows Good Results in Tests. A new vaccine has demonstrated encouraging outcomes in its latest clinical trials, offering hope for disease prevention. The clinical trials for a newly developed vaccine have shown highly promising results. This vaccine, designed to combat a specific disease, has successfully passed its initial testing phases, indicating a strong potential for effective disease prevention. Researchers are optimistic about its future impact on global health, pending further trials and regulatory approvals.')"><i class="fas fa-volume-up"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <img src="https://via.placeholder.com/160x110/9b59b6/ffffff?text=Space" alt="Space News Image" class="news-item-image">
+                    <div class="news-item-content">
+                        <p class="original-headline">Original: "Space Agency Discovers New Exoplanet with Liquid Water Potential"</p>
+                        <button class="headline-button" onclick="toggleSummary('prevSummary2')">New Planet Found with Possible Water</button>
+                        <div id="prevSummary2" class="news-summary-container">
+                            <p class="news-summary-short">A space agency has announced the discovery of a new exoplanet that shows potential signs of having liquid water, a key element for life.</p>
+                            <p class="news-summary-full">Astronomers from a leading space agency have made an exciting announcement: the discovery of a new exoplanet. This distant planet is particularly noteworthy because early observations suggest the presence of liquid water, a crucial ingredient for supporting life as we know it. Further studies will be conducted to confirm these findings and understand the exoplanet's full characteristics.</p>
+                            <button class="read-more-button" onclick="toggleSummary('prevSummary2')">Read More</button>
+                            <button class="read-aloud-button" onclick="readText('New Planet Found with Possible Water. A space agency has announced the discovery of a new exoplanet that shows potential signs of having liquid water, a key element for life. Astronomers from a leading space agency have made an exciting announcement: the discovery of a new exoplanet. This distant planet is particularly noteworthy because early observations suggest the presence of liquid water, a crucial ingredient for supporting life as we know it. Further studies will be conducted to confirm these findings and understand the exoplanet\'s full characteristics.')"><i class="fas fa-volume-up"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr>
+
+            <section class="football-news-section">
+                <h4>Football News: Latest Updates</h4>
+                <div class="news-item">
+                    <img src="https://via.placeholder.com/160x110/34495e/ffffff?text=Football" alt="Football News Image" class="news-item-image">
+                    <div class="news-item-content">
+                        <p class="original-headline">Original: "Premier League Team Signs Star Striker in Record Deal"</p>
+                        <button class="headline-button" onclick="toggleSummary('footballSummary1')">Top Team Buys Star Player</button>
+                        <div id="footballSummary1" class="news-summary-container">
+                            <p class="news-summary-short">A Premier League club has completed a record-breaking transfer, signing a highly sought-after striker for a substantial fee.</p>
+                            <p class="news-summary-full">One of the top teams in the Premier League has successfully completed a transfer deal, acquiring a highly anticipated star striker. The signing involved a record fee, making it one of the most expensive transfers in the league's history. Fans are excited about the potential impact this new player will have on the team's performance in the upcoming season.</p>
+                            <button class="read-more-button" onclick="toggleSummary('footballSummary1')">Read More</button>
+                            <button class="read-aloud-button" onclick="readText('Top Team Buys Star Player. A Premier League club has completed a record-breaking transfer, signing a highly sought-after striker for a substantial fee. One of the top teams in the Premier League has successfully completed a transfer deal, acquiring a highly anticipated star striker. The signing involved a record fee, making it one of the most expensive transfers in the league\'s history. Fans are excited about the potential impact this new player will have on the team\'s performance in the upcoming season.')"><i class="fas fa-volume-up"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="brazil-section">
+                <h4>Brazil Updates</h4>
+                <div class="news-item">
+                    <img src="https://via.placeholder.com/160x110/28a745/ffffff?text=Brazil" alt="Brazil News Image" class="news-item-image">
+                    <div class="news-item-content">
+                        <p class="original-headline">Original: "Amazon Rainforest Conservation Efforts Show Promising Results"</p>
+                        <button class="headline-button" onclick="toggleSummary('brazilSummary1')">Amazon Forest Protection Improving</button>
+                        <div id="brazilSummary1" class="news-summary-container">
+                            <p class="news-summary-short">Recent initiatives to protect the Amazon rainforest are yielding positive outcomes, with deforestation rates showing a decline.</p>
+                            <p class="news-summary-full">Conservation efforts in the Amazon rainforest are beginning to show encouraging results. New policies and increased enforcement have led to a noticeable decline in deforestation rates across the region. Environmental groups and the Brazilian government are cautiously optimistic that these trends will continue, contributing to the long-term preservation of this vital ecosystem.</p>
+                            <button class="read-more-button" onclick="toggleSummary('brazilSummary1')">Read More</button>
+                            <button class="read-aloud-button" onclick="readText('Amazon Forest Protection Improving. Recent initiatives to protect the Amazon rainforest are yielding positive outcomes, with deforestation rates showing a decline. Conservation efforts in the Amazon rainforest are beginning to show encouraging results. New policies and increased enforcement have led to a noticeable decline in deforestation rates across the region. Environmental groups and the Brazilian government are cautiously optimistic that these trends will continue, contributing to the long-term preservation of this vital ecosystem.')"><i class="fas fa-volume-up"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="trump-section">
+                <h4>Donald Trump News</h4>
+                <div class="news-item">
+                    <img src="https://via.placeholder.com/160x110/dc3545/ffffff?text=Trump" alt="Trump News Image" classt="news-item-image">
+                    <div class="news-item-content">
+                        <p class="original-headline">Original: "Former President Trump Addresses Supporters at Rally"</p>
+                        <button class="headline-button" onclick="toggleSummary('trumpSummary1')">Trump Speaks at Recent Rally</button>
+                        <div id="trumpSummary1" class="news-summary-container">
+                            <p class="news-summary-short">Former President Donald Trump held a rally where he addressed his supporters, discussing various political topics and his future plans.</p>
+                            <p class="news-summary-full">Former President Donald Trump recently held a political rally, gathering a large number of his supporters. During his speech, he covered a range of topics including current political events, economic policies, and hinted at his future involvement in national politics. The rally drew significant media attention and sparked discussions among political analysts.</p>
+                            <button class="read-more-button" onclick="toggleSummary('trumpSummary1')">Read More</button>
+                            <button class="read-aloud-button" onclick="readText('Trump Speaks at Recent Rally. Former President Donald Trump held a rally where he addressed his supporters, discussing various political topics and his future plans. Former President Donald Trump recently held a political rally, gathering a large number of his supporters. During his speech, he covered a range of topics including current political events, economic policies, and hinted at his future involvement in national politics. The rally drew significant media attention and sparked discussions among political analysts.')"><i class="fas fa-volume-up"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </div>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Global Pulse. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Contact Us</a></p>
+            <p>© 2025 by Daby. All rights reserved.</p>
+            <p>
+                <a href="https://wa.me/5511986108003" target="_blank">Contact Us</a>
+            </p>
         </div>
     </footer>
 
-    <div id="headlinesModalOverlay">
-        <div id="headlinesModalContent">
-            <h3>All Global Headlines</h3>
-            <div id="headlinesList" style="text-align: left; max-height: 400px; overflow-y: auto; padding-right: 15px;">
-                </div>
-            <button onclick="closeHeadlinesModal()" style="margin-top: 30px;">Close</button>
-        </div>
-    </div>
-
     <div id="messageBoxOverlay" class="message-box-overlay">
         <div class="message-box-content">
-            <h4 id="messageBoxTitle"></h4>
-            <p id="messageBoxText"></p>
-            <button onclick="closeMessageBox()">OK</button>
+            <h4>Thank You!</h4>
+            <p id="messageBoxText">Your message has been sent.</p>
+            <button onclick="hideMessageBox()">OK</button>
         </div>
     </div>
 
+    <div id="headlinesModalOverlay">
+        <div id="headlinesModalContent">
+            <h3 id="modalHeadline"></h3>
+            <p id="modalSummary"></p>
+            <button onclick="closeHeadlinesModal()">Close</button>
+            <button class="read-aloud-button" id="modalReadAloudButton" onclick=""><i class="fas fa-volume-up"></i> Read Aloud</button>
+        </div>
+    </div>
+
+
     <script>
-        // Smooth scrolling for anchor links
+        // Smooth scroll for navigation links (if you add them later)
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1270,104 +1141,106 @@
             });
         });
 
-        // Function to toggle summary visibility
-        function toggleSummary(button) {
-            const container = button.parentNode.querySelector('.news-summary-container');
-            container.classList.toggle('expanded');
-            if (container.classList.contains('expanded')) {
-                button.textContent = 'Read Less';
+        // Function to toggle full/short summary
+        function toggleSummary(summaryId) {
+            const summaryContainer = document.getElementById(summaryId);
+            summaryContainer.classList.toggle('expanded');
+            const button = summaryContainer.nextElementSibling; // This assumes button is right after container
+            if (summaryContainer.classList.contains('expanded')) {
+                 // Change text to 'Read Less' for the button that opened it
+                 // This needs to target the correct button element.
+                 // The provided HTML structure places the button inside the container,
+                 // so we need to select it correctly.
+                summaryContainer.querySelector('.read-more-button').textContent = 'Read Less';
             } else {
-                button.textContent = 'Read More';
+                summaryContainer.querySelector('.read-more-button').textContent = 'Read More';
             }
         }
 
-        // Text-to-speech function
-        function readAloud(button) {
-            const newsSummaryElement = button.closest('.news-item-content').querySelector('.news-summary-container .news-summary-full');
-            const newsSummaryText = newsSummaryElement.textContent;
 
+        // Universal Text-to-Speech Function
+        function readText(text) {
             if ('speechSynthesis' in window) {
-                const utterance = new SpeechSynthesisUtterance(newsSummaryText);
-                utterance.lang = 'en-US'; // Set language to English (US)
-                speechSynthesis.speak(utterance);
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'en-US'; // Set language to US English
+                window.speechSynthesis.speak(utterance);
             } else {
-                alert('Text-to-speech is not supported in your browser.');
+                alert('Sorry, your browser does not support text-to-speech. Please try a different browser like Chrome, Firefox, or Edge.');
             }
         }
 
-        // Message Box Functions
-        const messageBoxOverlay = document.getElementById('messageBoxOverlay');
-        const messageBoxTitle = document.getElementById('messageBoxTitle');
-        const messageBoxText = document.getElementById('messageBoxText');
+        // Fill-in-the-Blanks Logic
+        let score = 0;
+        let totalQuestions = 0;
 
-        function showMessageBox(title, text) {
-            messageBoxTitle.textContent = title;
-            messageBoxText.textContent = text;
-            messageBoxOverlay.classList.add('show');
-        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const blankInputs = document.querySelectorAll('.exercise-input');
+            totalQuestions = blankInputs.length; // Initialize totalQuestions on load
+            updateScoreDisplay(); // Display initial score (0/0)
 
-        function closeMessageBox() {
-            messageBoxOverlay.classList.remove('show');
-        }
+            blankInputs.forEach(input => {
+                input.addEventListener('input', () => {
+                    input.classList.remove('input-correct', 'input-incorrect');
+                });
+            });
+        });
 
-        // Fill-in-the-Blanks Exercise Logic
         function checkBlanks() {
-            let correctCount = 0;
-            const questions = [
-                { id: 'q1', answer: 'escalate' },
-                { id: 'q2', answer: 'humanitarian crisis' },
-                { id: 'q3', answer: 'tariff' },
-                { id: 'q4', answer: 'coup plot' }
-            ];
-
-            questions.forEach(q => {
-                const input = document.getElementById(q.id);
-                const feedback = document.getElementById(`${q.id}-feedback`);
+            score = 0;
+            const blankInputs = document.querySelectorAll('.exercise-input');
+            blankInputs.forEach(input => {
                 const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = input.dataset.answer.toLowerCase();
 
-                input.classList.remove('input-correct', 'input-incorrect');
-                feedback.textContent = ''; // Clear previous feedback
-
-                if (userAnswer === q.answer) {
+                if (userAnswer === correctAnswer) {
                     input.classList.add('input-correct');
-                    feedback.textContent = 'Correct!';
-                    correctCount++;
+                    input.classList.remove('input-incorrect');
+                    score++;
                 } else {
                     input.classList.add('input-incorrect');
-                    feedback.textContent = `Incorrect. Correct answer: ${q.answer}`;
+                    input.classList.remove('input-correct');
                 }
             });
-            updateScore(correctCount, questions.length);
+            updateScoreDisplay();
         }
 
         function resetBlanks() {
-            const inputs = document.querySelectorAll('.exercise-input');
-            inputs.forEach(input => {
+            const blankInputs = document.querySelectorAll('.exercise-input');
+            blankInputs.forEach(input => {
                 input.value = '';
                 input.classList.remove('input-correct', 'input-incorrect');
-                document.getElementById(`${input.id}-feedback`).textContent = '';
             });
-            updateScore(0, 0); // Reset score
+            score = 0;
+            updateScoreDisplay();
         }
 
-        // Drag and Drop Exercise Logic
+        function updateScoreDisplay() {
+            document.getElementById('score').textContent = `Score: ${score}/${totalQuestions}`;
+        }
+
+
+        // Drag and Drop Logic
+        const draggableWordsContainer = document.getElementById('draggableWordsContainer');
+        const droppableBlanks = document.querySelectorAll('.droppable-blank');
         let draggedItem = null;
 
-        document.querySelectorAll('.draggable-word').forEach(word => {
-            word.addEventListener('dragstart', (e) => {
+        draggableWordsContainer.addEventListener('dragstart', (e) => {
+            if (e.target.classList.contains('draggable-word')) {
                 draggedItem = e.target;
                 setTimeout(() => {
                     e.target.classList.add('dragging');
                 }, 0);
-            });
-
-            word.addEventListener('dragend', (e) => {
-                e.target.classList.remove('dragging');
-                draggedItem = null;
-            });
+            }
         });
 
-        document.querySelectorAll('.droppable-blank').forEach(blank => {
+        draggableWordsContainer.addEventListener('dragend', (e) => {
+            if (e.target.classList.contains('draggable-word')) {
+                e.target.classList.remove('dragging');
+                draggedItem = null;
+            }
+        });
+
+        droppableBlanks.forEach(blank => {
             blank.addEventListener('dragover', (e) => {
                 e.preventDefault(); // Allow drop
                 blank.classList.add('drag-over');
@@ -1381,94 +1254,84 @@
                 e.preventDefault();
                 blank.classList.remove('drag-over');
 
-                if (draggedItem) {
-                    // Only allow drop if the blank is empty
-                    if (!blank.textContent.trim()) {
-                        blank.textContent = draggedItem.dataset.word;
-                        draggedItem.style.display = 'none'; // Hide the dragged word from the draggable pool
-                    }
+                if (draggedItem && !blank.textContent.trim()) { // Only drop if blank is empty
+                    blank.textContent = draggedItem.textContent;
+                    blank.dataset.droppedWord = draggedItem.dataset.word; // Store the dropped word
+                    draggedItem.remove(); // Remove word from draggable area
                 }
             });
         });
 
         function checkDragAndDrop() {
-            let correctCount = 0;
-            const blanks = document.querySelectorAll('.droppable-blank');
-            const totalBlanks = blanks.length;
+            let correctDrops = 0;
+            let dragDropTotal = droppableBlanks.length;
 
-            blanks.forEach(blank => {
+            droppableBlanks.forEach(blank => {
                 blank.classList.remove('correct-drop', 'incorrect-drop');
-                const droppedWord = blank.textContent.trim();
-                const correctAnswer = blank.dataset.correct;
+                const droppedWord = blank.dataset.droppedWord;
+                const correctWord = blank.dataset.correctWord;
 
-                if (droppedWord.toLowerCase() === correctAnswer.toLowerCase()) {
+                if (droppedWord && droppedWord.toLowerCase() === correctWord.toLowerCase()) {
                     blank.classList.add('correct-drop');
-                    correctCount++;
-                } else if (droppedWord !== '') { // Mark as incorrect only if something was dropped
+                    correctDrops++;
+                } else {
                     blank.classList.add('incorrect-drop');
                 }
             });
-            updateScore(correctCount, totalBlanks);
+            // You might want a separate score for drag and drop or combine it
+            // For now, let's just show an alert or update a separate score.
+            showMessageBox(`Drag & Drop Score: ${correctDrops}/${dragDropTotal}`, 'Congratulations!', 'Oops!');
         }
 
         function resetDragAndDrop() {
-            document.querySelectorAll('.droppable-blank').forEach(blank => {
-                blank.textContent = '';
+            droppableBlanks.forEach(blank => {
+                if (blank.dataset.droppedWord) {
+                    // Recreate the draggable word and add it back to the container
+                    const word = document.createElement('div');
+                    word.classList.add('draggable-word');
+                    word.setAttribute('draggable', 'true');
+                    word.dataset.word = blank.dataset.droppedWord;
+                    word.textContent = blank.dataset.droppedWord;
+                    draggableWordsContainer.appendChild(word);
+                    blank.textContent = ''; // Clear the blank
+                    delete blank.dataset.droppedWord; // Remove stored word
+                }
                 blank.classList.remove('correct-drop', 'incorrect-drop');
             });
-            document.querySelectorAll('.draggable-word').forEach(word => {
-                word.style.display = 'inline-block'; // Show all draggable words again
-            });
-            updateScore(0, 0); // Reset score
+             // Also reset the original draggable words if they were removed and not replaced
+             // This part ensures all original words are back if they were removed without being dropped
+             const initialWords = ['sustainable', 'pledged', 'crisis', 'accelerate'];
+             const currentWords = Array.from(draggableWordsContainer.children).map(el => el.dataset.word);
+             initialWords.forEach(word => {
+                 if (!currentWords.includes(word)) {
+                     const newWord = document.createElement('div');
+                     newWord.classList.add('draggable-word');
+                     newWord.setAttribute('draggable', 'true');
+                     newWord.dataset.word = word;
+                     newWord.textContent = word;
+                     draggableWordsContainer.appendChild(newWord);
+                 }
+             });
         }
 
-        // Score Update Function
-        function updateScore(correct, total) {
-            const currentScoreSpan = document.getElementById('currentScore');
-            const maxScoreSpan = document.getElementById('maxScore');
-            currentScoreSpan.textContent = correct;
-            maxScoreSpan.textContent = total;
+
+        // Message Box Functions
+        function showMessageBox(message, title = 'Info', success = true) {
+            const overlay = document.getElementById('messageBoxOverlay');
+            const titleElement = overlay.querySelector('h4');
+            const messageElement = document.getElementById('messageBoxText');
+
+            titleElement.textContent = title;
+            messageElement.textContent = message;
+
+            overlay.classList.add('show');
         }
 
-        // Headlines Modal Functionality
-        const headlinesModalOverlay = document.getElementById('headlinesModalOverlay');
-        const headlinesList = document.getElementById('headlinesList');
-
-        function openHeadlinesModal() {
-            headlinesList.innerHTML = ''; // Clear previous headlines
-
-            const newsItems = document.querySelectorAll('.news-item');
-            newsItems.forEach(item => {
-                const headlineButton = item.querySelector('.headline-button');
-                const fullSummary = item.querySelector('.news-summary-full').textContent;
-
-                const headlineDiv = document.createElement('div');
-                headlineDiv.style.marginBottom = '20px';
-                headlineDiv.style.paddingBottom = '15px';
-                headlineDiv.style.borderBottom = '1px dashed rgba(0, 234, 255, 0.1)';
-
-                const headlineText = document.createElement('h4');
-                headlineText.textContent = headlineButton.textContent;
-                headlineText.style.color = '#66ffff';
-                headlineText.style.marginBottom = '10px';
-                headlineText.style.textAlign = 'left';
-
-                const summaryText = document.createElement('p');
-                summaryText.textContent = fullSummary;
-                summaryText.style.fontSize = '0.95em';
-                summaryText.style.textAlign = 'left';
-
-                headlineDiv.appendChild(headlineText);
-                headlineDiv.appendChild(summaryText);
-                headlinesList.appendChild(headlineDiv);
-            });
-
-            headlinesModalOverlay.classList.add('show');
+        function hideMessageBox() {
+            document.getElementById('messageBoxOverlay').classList.remove('show');
         }
 
-        function closeHeadlinesModal() {
-            headlinesModalOverlay.classList.remove('show');
-        }
     </script>
+
 </body>
 </html>
