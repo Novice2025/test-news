@@ -37,10 +37,10 @@
             z-index: -1; /* Behind content */
             /* Creates tiny white dots (stars) with varying sizes */
             background: radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
-                                 radial-gradient(1.5px 1.5px at 60px 70px, #eee, rgba(0,0,0,0)),
-                                 radial-gradient(2.5px 2.5px at 100px 50px, #eee, rgba(0,0,0,0)),
-                                 radial-gradient(2px 2px at 150px 20px, #eee, rgba(0,0,0,0)),
-                                 radial-gradient(1.8px 1.8px at 180px 90px, #eee, rgba(0,0,0,0));
+                                     radial-gradient(1.5px 1.5px at 60px 70px, #eee, rgba(0,0,0,0)),
+                                     radial-gradient(2.5px 2.5px at 100px 50px, #eee, rgba(0,0,0,0)),
+                                     radial-gradient(2px 2px at 150px 20px, #eee, rgba(0,0,0,0)),
+                                     radial-gradient(1.8px 1.8px at 180px 90px, #eee, rgba(0,0,0,0));
             background-size: 200px 200px; /* Size of the star pattern */
             animation: starfieldAnimation 120s linear infinite; /* Slow, continuous movement */
         }
@@ -197,7 +197,7 @@
             color: #e2e8f0; /* Light gray for content within boxes */
         }
 
-        .more-headlines, .previous-week-digest, .exercises-section, .football-news-section, .brazil-section, .trump-section {
+        .more-headlines, .previous-week-digest, .football-news-section, .brazil-section, .trump-section {
             background: linear-gradient(145deg, rgba(15, 77, 74, 0.4), rgba(0, 112, 101, 0.4)); /* Slightly transparent dark teal to brighter green-teal */
             padding: 35px;
             margin-bottom: 30px;
@@ -538,7 +538,7 @@
         }
 
         /* More Headlines Section - Individual News Item */
-        .more-headlines h2, .previous-week-digest h2, .football-news-section h2, .brazil-section h2, .trump-section h2 { /* Apply to all main section headlines */
+        .more-headlines h2, .previous-week-digest h2, .football-news-section h2, .brazil-section h2, .trump-section h2, .exercises-section h2 { /* Apply to all main section headlines */
             text-align: center;
             margin-bottom: 40px;
         }
@@ -877,171 +877,219 @@
 
         #headlinesModalContent p {
             font-size: 1.1em;
-            line-height: 1.7;
             margin-bottom: 25px;
+            color: #e2e8f0; /* Light gray */
         }
     </style>
 </head>
 <body>
-
     <header>
         <div class="container">
             <h1>Global Headlines for English Learners</h1>
-            <p class="subtitle">Your Weekly Digest of World News, Simplified.</p>
-            <p class="tagline">Enhance your English while staying informed about the world's most important events.</p>
+            <p class="subtitle">Your Weekly Digest for English Fluency and Global Awareness</p>
+            <p class="tagline">Unlock the World Through Language: Master English with Real-Time News</p>
             <p class="date">July 26, 2025</p>
-            <p class="purpose-aim">We break down complex global news into digestible summaries, focusing on key vocabulary and grammar to accelerate your English learning journey.</p>
+            <p class="purpose-aim">This weekly digest aims to help English learners improve their comprehension and vocabulary by engaging with current global events. Each headline is simplified, key vocabulary is highlighted, and interactive exercises are provided to reinforce learning.</p>
             <div class="header-connect">
-                <a href="https://wa.me/5511986108003" target="_blank" class="header-button"><i class="fab fa-whatsapp"></i> Contact Us</a>
+                <a href="#"><i class="fas fa-newspaper"></i> More Digests</a>
+                <a href="#"><i class="fas fa-microphone-alt"></i> Practice Speaking</a>
+                <a href="#"><i class="fas fa-graduation-cap"></i> Advanced Lessons</a>
             </div>
+            <button class="header-button" onclick="openHeadlinesModal()">View All Headlines</button>
         </div>
     </header>
 
     <main>
         <div class="container">
+            <section>
+                <img src="YOUR_IMAGE_URL_HERE" alt="Featured News Image" class="news-image">
+                <p class="original-headline">Original Headline: Global Leaders Convene for Climate Summit Amidst Rising Temperatures</p>
+                <button class="headline-button" onclick="toggleSummary(this, 'featured1')">
+                    Featured: World Leaders Discuss Urgent Climate Action as Temperatures Soar
+                    <button class="read-aloud-button" onclick="readAloud(event, 'Featured: World Leaders Discuss Urgent Climate Action as Temperatures Soar')"><i class="fas fa-volume-up"></i></button>
+                </button>
+                <div class="news-summary-container" id="featured1">
+                    <p class="news-summary-short">
+                        Leaders from around the globe are currently meeting at a critical **climate summit**, focusing on the urgent need to address **global warming**. Discussions are centered on new **policies** and **strategies** to reduce carbon emissions and prevent further **environmental damage**. The summit follows recent reports of record-breaking temperatures and extreme weather events worldwide.
+                    </p>
+                    <p class="news-summary-full">
+                        At a significant **international climate summit**, heads of state and environmental ministers from numerous countries have gathered to confront the escalating crisis of **global warming**. The agenda includes intense negotiations on implementing more aggressive **emission reduction targets** and fostering international cooperation on sustainable practices. Experts are presenting data on the rapid increase in global temperatures, emphasizing the severe consequences of inaction, such as melting ice caps, rising sea levels, and more frequent natural disasters. The summit aims to produce a unified **framework** for environmental protection and a commitment to a greener future.
+                    </p>
+                    <button class="read-more-button" onclick="toggleReadMore(this)">Read More</button>
+                </div>
+                <div class="learning-box">
+                    <h4>Key Vocabulary & Phrases:</h4>
+                    <ul>
+                        <li><strong>climate summit</strong> (n.): A high-level meeting where countries discuss climate change.</li>
+                        <li><strong>global warming</strong> (n.): The gradual increase in the Earth's average temperature.</li>
+                        <li><strong>policies</strong> (n.): Official rules or strategies.</li>
+                        <li><strong>strategies</strong> (n.): Plans of action designed to achieve a long-term or overall aim.</li>
+                        <li><strong>environmental damage</strong> (n.): Harm to the natural world.</li>
+                        <li><strong>emission reduction targets</strong> (n. phrase): Goals for lowering the amount of greenhouse gases released.</li>
+                        <li><strong>framework</strong> (n.): A basic structure underlying a system, concept, or text.</li>
+                    </ul>
+                    <p class="discussion-prompt"><strong>Discussion Prompt:</strong> What are some practical steps individuals and communities can take to combat global warming in their daily lives?</p>
+                </div>
+                <div class="vocabulary-dropdown">
+                    <details>
+                        <summary class="vocabulary-summary">Expand for More Vocabulary from this Article</summary>
+                        <div class="vocabulary-content">
+                            <h4>Additional Terms:</h4>
+                            <ul>
+                                <li><strong>convene</strong> (v.): To come or bring together for a meeting or activity; assemble.</li>
+                                <li><strong>escalating crisis</strong> (n. phrase): A situation of increasing danger or difficulty.</li>
+                                <li><strong>implementing</strong> (v.): Putting a decision, plan, or agreement into effect.</li>
+                                <li><strong>fostering</strong> (v.): Encouraging the development of something good.</li>
+                                <li><strong>sustainable practices</strong> (n. phrase): Methods of doing things that do not harm the environment or deplete natural resources.</li>
+                                <li><strong>consequences</strong> (n.): Results or effects of an action or condition.</li>
+                                <li><strong>unified</strong> (adj.): Made into or becoming a single unit.</li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+            </section>
+
+            <hr>
 
             <section class="more-headlines">
-                <h2>Other Important Headlines This Week</h2>
+                <h2>More Global Headlines</h2>
 
                 <div class="news-item">
-                    <img src="https://via.placeholder.com/160x110/3498db/ffffff?text=Tech" alt="Tech News Image" class="news-item-image">
+                    <img src="YOUR_IMAGE_URL_HERE" alt="Economic Stability Image" class="news-item-image">
                     <div class="news-item-content">
-                        <p class="original-headline">Original: "Giant Tech Company Unveils Breakthrough AI Chip"</p>
-                        <button class="headline-button" onclick="toggleSummary('summary1')">Tech Giant Reveals Powerful New AI Chip</button>
-                        <div id="summary1" class="news-summary-container">
-                            <p class="news-summary-short">A major technology company has announced a groundbreaking new artificial intelligence chip, promising to speed up data processing and enable more advanced AI applications.</p>
-                            <p class="news-summary-full">A significant technology company, known for its innovation, has officially announced the launch of a revolutionary new artificial intelligence chip. This new hardware is expected to dramatically accelerate data processing capabilities, which will allow for the development and implementation of even more sophisticated and powerful AI applications across various industries. Experts believe this could set a new standard for AI technology.</p>
-                            <button class="read-more-button" onclick="toggleSummary('summary1')">Read More</button>
-                            <button class="read-aloud-button" onclick="readText('Tech Giant Reveals Powerful New AI Chip. A major technology company has announced a groundbreaking new artificial intelligence chip, promising to speed up data processing and enable more advanced AI applications. A significant technology company, known for its innovation, has officially announced the launch of a revolutionary new artificial intelligence chip. This new hardware is expected to dramatically accelerate data processing capabilities, which will allow for the development and implementation of even more sophisticated and powerful AI applications across various industries. Experts believe this could set a new standard for AI technology.')"><i class="fas fa-volume-up"></i></button>
+                        <p class="original-headline">Original Headline: International Markets Show Resilience Amidst Economic Uncertainties</p>
+                        <button class="headline-button" onclick="toggleSummary(this, 'headline2')">
+                            Markets Hold Steady Despite Economic Concerns
+                            <button class="read-aloud-button" onclick="readAloud(event, 'Markets Hold Steady Despite Economic Concerns')"><i class="fas fa-volume-up"></i></button>
+                        </button>
+                        <div class="news-summary-container" id="headline2">
+                            <p class="news-summary-short">
+                                Global **stock markets** are showing surprising **stability** this week, even with ongoing concerns about **inflation** and potential **recessions**. Analysts note a sense of **resilience** as investors continue to navigate the uncertain economic landscape.
+                            </p>
+                            <p class="news-summary-full">
+                                Despite persistent worries about rising **inflation** rates and the possibility of **economic recessions** in major economies, international **stock markets** have demonstrated remarkable **stability** over the past five days. Financial analysts attribute this unexpected **resilience** to several factors, including strong corporate earnings reports in certain sectors and a cautious optimism among investors about future economic adjustments. Central banks' recent policy statements have also played a role in providing some clarity, helping to temper widespread panic.
+                            </p>
+                            <button class="read-more-button" onclick="toggleReadMore(this)">Read More</button>
+                        </div>
+                        <div class="learning-box">
+                            <h4>Key Vocabulary:</h4>
+                            <ul>
+                                <li><strong>stock markets</strong> (n.): Places where shares of public companies are bought and sold.</li>
+                                <li><strong>stability</strong> (n.): The state of being steady and not changing.</li>
+                                <li><strong>inflation</strong> (n.): A general increase in prices and fall in the purchasing value of money.</li>
+                                <li><strong>recessions</strong> (n.): Periods of temporary economic decline.</li>
+                                <li><strong>resilience</strong> (n.): The capacity to recover quickly from difficulties.</li>
+                            </ul>
+                        </div>
+                        <div class="vocabulary-dropdown">
+                            <details>
+                                <summary class="vocabulary-summary">More Vocabulary</summary>
+                                <div class="vocabulary-content">
+                                    <h4>Additional Terms:</h4>
+                                    <ul>
+                                        <li><strong>persistent</strong> (adj.): Continuing firmly or obstinately in a course of action in spite of difficulty or opposition.</li>
+                                        <li><strong>attribute to</strong> (phrasal verb): To regard something as being caused by.</li>
+                                        <li><strong>corporate earnings</strong> (n. phrase): The profit that a company makes.</li>
+                                        <li><strong>cautious optimism</strong> (n. phrase): A feeling or belief that good things will happen while also being careful about the risks.</li>
+                                        <li><strong>temper</strong> (v.): To improve the moderation or quality of something by adding a counterbalancing element.</li>
+                                    </ul>
+                                </div>
+                            </details>
                         </div>
                     </div>
                 </div>
 
                 <div class="news-item">
-                    <img src="https://via.placeholder.com/160x110/27ae60/ffffff?text=Environment" alt="Environment News Image" class="news-item-image">
+                    <img src="YOUR_IMAGE_URL_HERE" alt="New Tech Breakthrough Image" class="news-item-image">
                     <div class="news-item-content">
-                        <p class="original-headline">Original: "Global Leaders Pledge Billions for Climate Initiatives"</p>
-                        <button class="headline-button" onclick="toggleSummary('summary2')">World Leaders Commit Funds to Fight Climate Change</button>
-                        <div id="summary2" class="news-summary-container">
-                            <p class="news-summary-short">Leaders from around the world have pledged billions of dollars towards new initiatives aimed at combating climate change and promoting sustainable development.</p>
-                            <p class="news-summary-full">During a recent international summit, global leaders made significant financial commitments, pledging billions of dollars to fund new initiatives designed to tackle climate change. These efforts will focus on reducing carbon emissions, investing in renewable energy sources, and promoting sustainable practices worldwide. The move is seen as a crucial step in addressing the urgent environmental crisis facing the planet.</p>
-                            <button class="read-more-button" onclick="toggleSummary('summary2')">Read More</button>
-                            <button class="read-aloud-button" onclick="readText('World Leaders Commit Funds to Fight Climate Change. Leaders from around the world have pledged billions of dollars towards new initiatives aimed at combating climate change and promoting sustainable development. During a recent international summit, global leaders made significant financial commitments, pledging billions of dollars to fund new initiatives designed to tackle climate change. These efforts will focus on reducing carbon emissions, investing in renewable energy sources, and promoting sustainable practices worldwide. The move is seen as a crucial step in addressing the urgent environmental crisis facing the planet.')"><i class="fas fa-volume-up"></i></button>
+                        <p class="original-headline">Original Headline: Scientists Announce Breakthrough in Renewable Energy Storage</p>
+                        <button class="headline-button" onclick="toggleSummary(this, 'headline3')">
+                            Scientists Achieve Major Energy Storage Breakthrough
+                            <button class="read-aloud-button" onclick="readAloud(event, 'Scientists Achieve Major Energy Storage Breakthrough')"><i class="fas fa-volume-up"></i></button>
+                        </button>
+                        <div class="news-summary-container" id="headline3">
+                            <p class="news-summary-short">
+                                Researchers have made a significant **advance** in **renewable energy** storage technology, potentially solving a key challenge for clean energy. This **breakthrough** could pave the way for more widespread use of solar and wind power.
+                            </p>
+                            <p class="news-summary-full">
+                                A team of international scientists has announced a **groundbreaking advance** in the field of **renewable energy** storage. Their new technology promises to efficiently store large amounts of energy generated from intermittent sources like solar and wind, which has long been a significant obstacle to their broader adoption. This **breakthrough** could dramatically accelerate the global transition to clean energy, making it more reliable and accessible for communities worldwide. Details of the new method suggest a highly scalable and cost-effective solution.
+                            </p>
+                            <button class="read-more-button" onclick="toggleReadMore(this)">Read More</button>
+                        </div>
+                        <div class="learning-box">
+                            <h4>Key Vocabulary:</h4>
+                            <ul>
+                                <li><strong>advance</strong> (n.): A development or improvement.</li>
+                                <li><strong>renewable energy</strong> (n. phrase): Energy from sources that are naturally replenished (e.g., solar, wind).</li>
+                                <li><strong>breakthrough</strong> (n.): A significant discovery or development.</li>
+                                <li><strong>intermittent</strong> (adj.): Occurring at irregular intervals; not continuous or steady.</li>
+                                <li><strong>scalable</strong> (adj.): Able to be changed in size or scale.</li>
+                            </ul>
+                        </div>
+                        <div class="vocabulary-dropdown">
+                            <details>
+                                <summary class="vocabulary-summary">More Vocabulary</summary>
+                                <div class="vocabulary-content">
+                                    <h4>Additional Terms:</h4>
+                                    <ul>
+                                        <li><strong>groundbreaking</strong> (adj.): Innovative; a new and very important development.</li>
+                                        <li><strong>efficiently</strong> (adv.): In a way that achieves maximum productivity with minimum wasted effort or expense.</li>
+                                        <li><strong>intermittent sources</strong> (n. phrase): Energy sources that are not always available (e.g., solar only when the sun shines).</li>
+                                        <li><strong>obstacle</strong> (n.): A thing that blocks one's way or prevents or hinders progress.</li>
+                                        <li><strong>accelerate</strong> (v.): To increase in amount or extent.</li>
+                                    </ul>
+                                </div>
+                            </details>
                         </div>
                     </div>
                 </div>
 
                 <div class="news-item">
-                    <img src="https://via.placeholder.com/160x110/e74c3c/ffffff?text=Economy" alt="Economy News Image" class="news-item-image">
+                    <img src="YOUR_IMAGE_URL_HERE" alt="Cultural Festival Image" class="news-item-image">
                     <div class="news-item-content">
-                        <p class="original-headline">Original: "Inflation Concerns Rise in Key Economies"</p>
-                        <button class="headline-button" onclick="toggleSummary('summary3')">Inflation Worries Grow in Major Economies</button>
-                        <div id="summary3" class="news-summary-container">
-                            <p class="news-summary-short">Economists are expressing increasing concern about rising inflation rates in several of the world's leading economies.</p>
-                            <p class="news-summary-full">Leading economists are observing with growing concern the persistent rise in inflation rates across several of the world's most influential economies. This trend could lead to higher prices for consumers, reduced purchasing power, and potentially impact global economic stability. Central banks are monitoring the situation closely and considering measures to control price increases without hindering economic growth.</p>
-                            <button class="read-more-button" onclick="toggleSummary('summary3')">Read More</button>
-                            <button class="read-aloud-button" onclick="readText('Inflation Worries Grow in Major Economies. Economists are expressing increasing concern about rising inflation rates in several of the world\'s leading economies. Leading economists are observing with growing concern the persistent rise in inflation rates across several of the world\'s most influential economies. This trend could lead to higher prices for consumers, reduced purchasing power, and potentially impact global economic stability. Central banks are monitoring the situation closely and considering measures to control price increases without hindering economic growth.')"><i class="fas fa-volume-up"></i></button>
+                        <p class="original-headline">Original Headline: Ancient City Unearths New Artifacts Revealing Rich History</p>
+                        <button class="headline-button" onclick="toggleSummary(this, 'headline4')">
+                            New Discoveries in Ancient City Uncover Rich History
+                            <button class="read-aloud-button" onclick="readAloud(event, 'New Discoveries in Ancient City Uncover Rich History')"><i class="fas fa-volume-up"></i></button>
+                        </button>
+                        <div class="news-summary-container" id="headline4">
+                            <p class="news-summary-short">
+                                Archaeologists working in an **ancient city** have made exciting new **discoveries**, unearthing well-preserved **artifacts** that provide fresh insights into its **historical past** and the lives of its inhabitants.
+                            </p>
+                            <p class="news-summary-full">
+                                Excavations at the site of a renowned **ancient city** have yielded a treasure trove of new **artifacts**, including intricate pottery, tools, and personal adornments. These remarkably well-preserved items are shedding new light on the daily lives, customs, and social structures of the civilization that once thrived there. Experts believe these **discoveries** will significantly revise existing historical narratives and offer an unparalleled glimpse into the region's rich and complex **past**. The findings are expected to attract even more attention from historians and tourists alike.
+                            </p>
+                            <button class="read-more-button" onclick="toggleReadMore(this)">Read More</button>
                         </div>
-                    </div>
-                </div>
-
-            </section>
-
-            <hr>
-
-            <section class="exercises-section">
-                <h2>Practice Your English!</h2>
-                <div class="exercise-score" id="score">Score: 0/0</div>
-
-                <h4>Fill in the Blanks</h4>
-                <div class="exercise-container">
-                    <p class="exercise-question">The government is planning to <input type="text" class="exercise-input" id="blank1" data-answer="implement"> new policies to boost the economy.</p>
-                    <p class="exercise-question">Scientists are working on a <input type="text" class="exercise-input" id="blank2" data-answer="breakthrough"> that could change medicine.</p>
-                    <p class="exercise-question">Many people are concerned about the <input type="text" class="exercise-input" id="blank3" data-answer="impact"> of climate change.</p>
-                    <div class="exercise-buttons">
-                        <button onclick="checkBlanks()">Check Answers</button>
-                        <button onclick="resetBlanks()">Reset</button>
-                    </div>
-                </div>
-
-                <h4>Drag and Drop the Words</h4>
-                <div class="exercise-container">
-                    <div class="draggable-words" id="draggableWordsContainer">
-                        <div class="draggable-word" draggable="true" data-word="sustainable">sustainable</div>
-                        <div class="draggable-word" draggable="true" data-word="pledged">pledged</div>
-                        <div class="draggable-word" draggable="true" data-word="crisis">crisis</div>
-                        <div class="draggable-word" draggable="true" data-word="accelerate">accelerate</div>
-                    </div>
-                    <p class="exercise-question">Global leaders have <span class="droppable-blank" data-correct-word="pledged"></span> to address the climate <span class="droppable-blank" data-correct-word="crisis"></span>.</p>
-                    <p class="exercise-question">The new technology will <span class="droppable-blank" data-correct-word="accelerate"></span> data processing for <span class="droppable-blank" data-correct-word="sustainable"></span> development.</p>
-                    <div class="exercise-buttons">
-                        <button onclick="checkDragAndDrop()">Check Answers</button>
-                        <button onclick="resetDragAndDrop()">Reset</button>
-                    </div>
-                </div>
-
-            </section>
-
-            <hr>
-
-            <section class="vocabulary-dropdown">
-                <details>
-                    <summary class="vocabulary-summary">Key Vocabulary & Phrases</summary>
-                    <div class="vocabulary-content">
-                        <h4>General Terms</h4>
-                        <ul>
-                            <li><strong>Breakthrough:</strong> A significant discovery or development. (Ex: Scientists made a *breakthrough* in cancer research.)</li>
-                            <li><strong>Initiative:</strong> A new plan or process to achieve something. (Ex: The government launched a new *initiative* to reduce unemployment.)</li>
-                            <li><strong>Combat:</strong> To fight against or oppose. (Ex: They are working to *combat* poverty.)</li>
-                            <li><strong>Sustainable:</strong> Able to be maintained at a certain rate or level; causing little or no damage to the environment and therefore able to continue for a long time. (Ex: Renewable energy is a *sustainable* option.)</li>
-                            <li><strong>Pledge:</strong> A solemn promise or undertaking. (Ex: They *pledged* to donate a portion of their profits.)</li>
-                            <li><strong>Digestible:</strong> Easy to understand or absorb. (Ex: The complex information was presented in a *digestible* format.)</li>
-                        </ul>
-                        <h4>Business & Economy</h4>
-                        <ul>
-                            <li><strong>Inflation:</strong> A general increase in prices and fall in the purchasing value of money. (Ex: High *inflation* can make everyday goods more expensive.)</li>
-                            <li><strong>Purchasing power:</strong> The financial ability to buy products and services. (Ex: Inflation reduces consumers' *purchasing power*.)</li>
-                            <li><strong>Hinder:</strong> To create difficulties for (someone or something), resulting in delay or obstruction. (Ex: Bad weather can *hinder* travel plans.)</li>
-                        </ul>
-                        <h4>Politics & Society</h4>
-                        <ul>
-                            <li><strong>Unveil:</strong> To reveal or announce publicly for the first time. (Ex: The company will *unveil* its new product next month.)</li>
-                            <li><strong>Summit:</strong> A meeting between heads of government. (Ex: World leaders met at the G7 *summit*.)</li>
-                        </ul>
-                    </div>
-                </details>
-            </section>
-
-            <hr>
-
-            <section class="previous-week-digest">
-                <h2>Previous Week's Digest</h2>
-                <p class="date-subheading">July 19, 2025</p>
-
-                <div class="news-item">
-                    <img src="https://via.placeholder.com/160x110/f39c12/ffffff?text=Health" alt="Health News Image" class="news-item-image">
-                    <div class="news-item-content">
-                        <p class="original-headline">Original: "New Vaccine Shows Promising Results in Clinical Trials"</p>
-                        <button class="headline-button" onclick="toggleSummary('prevSummary1')">Vaccine Shows Good Results in Tests</button>
-                        <div id="prevSummary1" class="news-summary-container">
-                            <p class="news-summary-short">A new vaccine has demonstrated encouraging outcomes in its latest clinical trials, offering hope for disease prevention.</p>
-                            <p class="news-summary-full">The clinical trials for a newly developed vaccine have shown highly promising results. This vaccine, designed to combat a specific disease, has successfully passed its initial testing phases, indicating a strong potential for effective disease prevention. Researchers are optimistic about its future impact on global health, pending further trials and regulatory approvals.</p>
-                            <button class="read-more-button" onclick="toggleSummary('prevSummary1')">Read More</button>
-                            <button class="read-aloud-button" onclick="readText('Vaccine Shows Good Results in Tests. A new vaccine has demonstrated encouraging outcomes in its latest clinical trials, offering hope for disease prevention. The clinical trials for a newly developed vaccine have shown highly promising results. This vaccine, designed to combat a specific disease, has successfully passed its initial testing phases, indicating a strong potential for effective disease prevention. Researchers are optimistic about its future impact on global health, pending further trials and regulatory approvals.')"><i class="fas fa-volume-up"></i></button>
+                        <div class="learning-box">
+                            <h4>Key Vocabulary:</h4>
+                            <ul>
+                                <li><strong>ancient city</strong> (n. phrase): A very old city.</li>
+                                <li><strong>discoveries</strong> (n.): Acts of finding something new.</li>
+                                <li><strong>artifacts</strong> (n.): Objects made by humans, typically of cultural or historical interest.</li>
+                                <li><strong>historical past</strong> (n. phrase): Events that happened in history.</li>
+                                <li><strong>inhabitants</strong> (n.): People or animals that live in a particular place.</li>
+                            </ul>
                         </div>
-                    </div>
-                </div>
-
-                <div class="news-item">
-                    <img src="https://via.placeholder.com/160x110/9b59b6/ffffff?text=Space" alt="Space News Image" class="news-item-image">
-                    <div class="news-item-content">
-                        <p class="original-headline">Original: "Space Agency Discovers New Exoplanet with Liquid Water Potential"</p>
-                        <button class="headline-button" onclick="toggleSummary('prevSummary2')">New Planet Found with Possible Water</button>
-                        <div id="prevSummary2" class="news-summary-container">
-                            <p class="news-summary-short">A space agency has announced the discovery of a new exoplanet that shows potential signs of having liquid water, a key element for life.</p>
-                            <p class="news-summary-full">Astronomers from a leading space agency have made an exciting announcement: the discovery of a new exoplanet. This distant planet is particularly noteworthy because early observations suggest the presence of liquid water, a crucial ingredient for supporting life as we know it. Further studies will be conducted to confirm these findings and understand the exoplanet's full characteristics.</p>
-                            <button class="read-more-button" onclick="toggleSummary('prevSummary2')">Read More</button>
-                            <button class="read-aloud-button" onclick="readText('New Planet Found with Possible Water. A space agency has announced the discovery of a new exoplanet that shows potential signs of having liquid water, a key element for life. Astronomers from a leading space agency have made an exciting announcement: the discovery of a new exoplanet. This distant planet is particularly noteworthy because early observations suggest the presence of liquid water, a crucial ingredient for supporting life as we know it. Further studies will be conducted to confirm these findings and understand the exoplanet\'s full characteristics.')"><i class="fas fa-volume-up"></i></button>
+                        <div class="vocabulary-dropdown">
+                            <details>
+                                <summary class="vocabulary-summary">More Vocabulary</summary>
+                                <div class="vocabulary-content">
+                                    <h4>Additional Terms:</h4>
+                                    <ul>
+                                        <li><strong>excavations</strong> (n.): The action of digging something, especially an archaeological site.</li>
+                                        <li><strong>yielded</strong> (v.): Produced or provided.</li>
+                                        <li><strong>treasure trove</strong> (n. phrase): A collection of valuable items.</li>
+                                        <li><strong>intricate</strong> (adj.): Very complicated or detailed.</li>
+                                        <li><strong>adornments</strong> (n.): Things that adorn or decorate; ornaments.</li>
+                                        <li><strong>shedding new light on</strong> (idiom): To reveal new information about something.</li>
+                                        <li><strong>thrived</strong> (v.): Grew or developed well or vigorously.</li>
+                                        <li><strong>unparalleled</strong> (adj.): Having no equal or comparison.</li>
+                                        <li><strong>revise</strong> (v.): To reconsider and alter (something) in the light of further evidence.</li>
+                                        <li><strong>narratives</strong> (n.): Accounts or stories.</li>
+                                    </ul>
+                                </div>
+                            </details>
                         </div>
                     </div>
                 </div>
@@ -1050,181 +1098,457 @@
             <hr>
 
             <section class="football-news-section">
-                <h4>Football News: Latest Updates</h4>
+                <h2>Football News</h2>
+
                 <div class="news-item">
-                    <img src="https://via.placeholder.com/160x110/34495e/ffffff?text=Football" alt="Football News Image" class="news-item-image">
+                    <img src="YOUR_IMAGE_URL_HERE" alt="Football Match Image" class="news-item-image">
                     <div class="news-item-content">
-                        <p class="original-headline">Original: "Premier League Team Signs Star Striker in Record Deal"</p>
-                        <button class="headline-button" onclick="toggleSummary('footballSummary1')">Top Team Buys Star Player</button>
-                        <div id="footballSummary1" class="news-summary-container">
-                            <p class="news-summary-short">A Premier League club has completed a record-breaking transfer, signing a highly sought-after striker for a substantial fee.</p>
-                            <p class="news-summary-full">One of the top teams in the Premier League has successfully completed a transfer deal, acquiring a highly anticipated star striker. The signing involved a record fee, making it one of the most expensive transfers in the league's history. Fans are excited about the potential impact this new player will have on the team's performance in the upcoming season.</p>
-                            <button class="read-more-button" onclick="toggleSummary('footballSummary1')">Read More</button>
-                            <button class="read-aloud-button" onclick="readText('Top Team Buys Star Player. A Premier League club has completed a record-breaking transfer, signing a highly sought-after striker for a substantial fee. One of the top teams in the Premier League has successfully completed a transfer deal, acquiring a highly anticipated star striker. The signing involved a record fee, making it one of the most expensive transfers in the league\'s history. Fans are excited about the potential impact this new player will have on the team\'s performance in the upcoming season.')"><i class="fas fa-volume-up"></i></button>
+                        <p class="original-headline">Original Headline: European Giants Clash in Champions League Semi-Final Thriller</p>
+                        <button class="headline-button" onclick="toggleSummary(this, 'football1')">
+                            European Football Giants Face Off in Thrilling Match
+                            <button class="read-aloud-button" onclick="readAloud(event, 'European Football Giants Face Off in Thrilling Match')"><i class="fas fa-volume-up"></i></button>
+                        </button>
+                        <div class="news-summary-container" id="football1">
+                            <p class="news-summary-short">
+                                Two of Europe's biggest **football clubs** played an exciting **semi-final match** in the Champions League, keeping fans on the edge of their seats until the very end. The game was a true **thriller**, showcasing top talent.
+                            </p>
+                            <p class="news-summary-full">
+                                In a highly anticipated **Champions League semi-final**, two of the most dominant **European football clubs** delivered an unforgettable performance. The match, described as a tactical masterclass and a display of individual brilliance, saw multiple lead changes and dramatic moments, culminating in a narrow victory for one side. Fans and pundits alike are hailing it as one of the best games of the tournament, setting the stage for an equally exciting final. The intensity of the **rivalry** and the high stakes made it a truly captivating event.
+                            </p>
+                            <button class="read-more-button" onclick="toggleReadMore(this)">Read More</button>
+                        </div>
+                        <div class="learning-box">
+                            <h4>Key Vocabulary:</h4>
+                            <ul>
+                                <li><strong>football clubs</strong> (n. phrase): Professional soccer teams.</li>
+                                <li><strong>semi-final match</strong> (n. phrase): A game that determines which teams will play in the final.</li>
+                                <li><strong>thriller</strong> (n.): An exciting and suspenseful event.</li>
+                                <li><strong>tactical masterclass</strong> (n. phrase): A display of great skill in planning and strategy.</li>
+                                <li><strong>pundits</strong> (n.): Experts who offer opinions publicly.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <img src="YOUR_IMAGE_URL_HERE" alt="Player Transfer Image" class="news-item-image">
+                    <div class="news-item-content">
+                        <p class="original-headline">Original Headline: Star Striker Completes Record-Breaking Transfer to Premier League Club</p>
+                        <button class="headline-button" onclick="toggleSummary(this, 'football2')">
+                            Star Player Makes Record Transfer to New Club
+                            <button class="read-aloud-button" onclick="readAloud(event, 'Star Player Makes Record Transfer to New Club')"><i class="fas fa-volume-up"></i></button>
+                        </button>
+                        <div class="news-summary-container" id="football2">
+                            <p class="news-summary-short">
+                                A highly sought-after **striker** has officially joined a major Premier League club in a **record-breaking transfer deal**. This move is expected to significantly impact the team's performance next season.
+                            </p>
+                            <p class="news-summary-full">
+                                One of the most prolific **strikers** in global football has completed a **sensational transfer** to a top-tier Premier League club, with the fee reportedly setting a new league record. The move has generated immense excitement among the club's fanbase and is seen as a clear statement of intent for the upcoming season. The player, known for his exceptional goal-scoring ability and playmaking skills, is expected to be a pivotal figure in the team's ambition to compete for major titles. This high-profile **acquisition** marks a significant moment in the summer transfer window.
+                            </p>
+                            <button class="read-more-button" onclick="toggleReadMore(this)">Read More</button>
+                        </div>
+                        <div class="learning-box">
+                            <h4>Key Vocabulary:</h4>
+                            <ul>
+                                <li><strong>striker</strong> (n.): A forward player in soccer whose main role is to score goals.</li>
+                                <li><strong>transfer deal</strong> (n. phrase): An agreement to move a player from one club to another.</li>
+                                <li><strong>prolific</strong> (adj.): Producing many works or results.</li>
+                                <li><strong>sensational</strong> (adj.): Causing great public interest and excitement.</li>
+                                <li><strong>pivotal figure</strong> (n. phrase): A very important person in a situation.</li>
+                                <li><strong>acquisition</strong> (n.): The act of getting or buying something.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </section>
+
+            <hr>
 
             <section class="brazil-section">
-                <h4>Brazil Updates</h4>
+                <h2>News from Brazil</h2>
+
                 <div class="news-item">
-                    <img src="https://via.placeholder.com/160x110/28a745/ffffff?text=Brazil" alt="Brazil News Image" class="news-item-image">
+                    <img src="YOUR_IMAGE_URL_HERE" alt="Amazon Rainforest Image" class="news-item-image">
                     <div class="news-item-content">
-                        <p class="original-headline">Original: "Amazon Rainforest Conservation Efforts Show Promising Results"</p>
-                        <button class="headline-button" onclick="toggleSummary('brazilSummary1')">Amazon Forest Protection Improving</button>
-                        <div id="brazilSummary1" class="news-summary-container">
-                            <p class="news-summary-short">Recent initiatives to protect the Amazon rainforest are yielding positive outcomes, with deforestation rates showing a decline.</p>
-                            <p class="news-summary-full">Conservation efforts in the Amazon rainforest are beginning to show encouraging results. New policies and increased enforcement have led to a noticeable decline in deforestation rates across the region. Environmental groups and the Brazilian government are cautiously optimistic that these trends will continue, contributing to the long-term preservation of this vital ecosystem.</p>
-                            <button class="read-more-button" onclick="toggleSummary('brazilSummary1')">Read More</button>
-                            <button class="read-aloud-button" onclick="readText('Amazon Forest Protection Improving. Recent initiatives to protect the Amazon rainforest are yielding positive outcomes, with deforestation rates showing a decline. Conservation efforts in the Amazon rainforest are beginning to show encouraging results. New policies and increased enforcement have led to a noticeable decline in deforestation rates across the region. Environmental groups and the Brazilian government are cautiously optimistic that these trends will continue, contributing to the long-term preservation of this vital ecosystem.')"><i class="fas fa-volume-up"></i></button>
+                        <p class="original-headline">Original Headline: Brazil Intensifies Efforts to Combat Deforestation in Amazon</p>
+                        <button class="headline-button" onclick="toggleSummary(this, 'brazil1')">
+                            Brazil Steps Up Fight Against Amazon Deforestation
+                            <button class="read-aloud-button" onclick="readAloud(event, 'Brazil Steps Up Fight Against Amazon Deforestation')"><i class="fas fa-volume-up"></i></button>
+                        </button>
+                        <div class="news-summary-container" id="brazil1">
+                            <p class="news-summary-short">
+                                Brazil has announced new measures and **intensified efforts** to curb **deforestation** in the Amazon rainforest. The government aims to protect this vital ecosystem, which plays a crucial role in global climate regulation.
+                            </p>
+                            <p class="news-summary-full">
+                                In a significant policy shift, the Brazilian government has unveiled a comprehensive plan to **intensify** its fight against illegal **deforestation** in the Amazon. The new measures include increased surveillance, stricter penalties for environmental crimes, and initiatives to support sustainable development for local communities. Environmental groups have largely welcomed these moves, emphasizing the Amazon's irreplaceable role as a carbon sink and a biodiversity hotspot. The efforts come amidst international pressure to protect the world's largest rainforest from further destruction.
+                            </p>
+                            <button class="read-more-button" onclick="toggleReadMore(this)">Read More</button>
+                        </div>
+                        <div class="learning-box">
+                            <h4>Key Vocabulary:</h4>
+                            <ul>
+                                <li><strong>intensifies efforts</strong> (phr. verb): Increases the amount or degree of trying.</li>
+                                <li><strong>deforestation</strong> (n.): The clearing of forests for other land use.</li>
+                                <li><strong>ecosystem</strong> (n.): A biological community of interacting organisms and their physical environment.</li>
+                                <li><strong>carbon sink</strong> (n. phrase): A natural environment that absorbs carbon dioxide from the atmosphere.</li>
+                                <li><strong>biodiversity hotspot</strong> (n. phrase): A biogeographic region with a significant level of biodiversity that is under threat from humans.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <img src="YOUR_IMAGE_URL_HERE" alt="Brazilian Economy Image" class="news-item-image">
+                    <div class="news-item-content">
+                        <p class="original-headline">Original Headline: Brazilian Economy Shows Signs of Recovery and Growth</p>
+                        <button class="headline-button" onclick="toggleSummary(this, 'brazil2')">
+                            Brazilian Economy Begins to Recover and Grow
+                            <button class="read-aloud-button" onclick="readAloud(event, 'Brazilian Economy Begins to Recover and Grow')"><i class="fas fa-volume-up"></i></button>
+                        </button>
+                        <div class="news-summary-container" id="brazil2">
+                            <p class="news-summary-short">
+                                Recent reports indicate that the **Brazilian economy** is showing positive **signs of recovery**, with key sectors experiencing **growth**. This development suggests a potential turnaround after a challenging period.
+                            </p>
+                            <p class="news-summary-full">
+                                The latest economic indicators for Brazil present an optimistic outlook, suggesting that the nation's **economy** is firmly on a path to **recovery** and sustained **growth**. Sectors such as agribusiness, technology, and renewable energy are leading the charge, with increased investment and job creation. Analysts point to a combination of favorable commodity prices, government stimulus measures, and a renewed sense of investor confidence as drivers for this positive trend. While challenges remain, the current trajectory offers hope for a more prosperous future for the country.
+                            </p>
+                            <button class="read-more-button" onclick="toggleReadMore(this)">Read More</button>
+                        </div>
+                        <div class="learning-box">
+                            <h4>Key Vocabulary:</h4>
+                            <ul>
+                                <li><strong>signs of recovery</strong> (n. phrase): Indications that a situation is improving.</li>
+                                <li><strong>growth</strong> (n.): The process of increasing in size, amount, or degree.</li>
+                                <li><strong>indicators</strong> (n.): A thing that indicates the state or level of something.</li>
+                                <li><strong>stimulus measures</strong> (n. phrase): Actions taken by the government to encourage economic activity.</li>
+                                <li><strong>investor confidence</strong> (n. phrase): The feeling or belief among investors that the economy is good or will improve.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </section>
+
+            <hr>
 
             <section class="trump-section">
-                <h4>Donald Trump News</h4>
+                <h2>News related to Donald Trump</h2>
+
                 <div class="news-item">
-                    <img src="https://via.placeholder.com/160x110/dc3545/ffffff?text=Trump" alt="Trump News Image" classt="news-item-image">
+                    <img src="YOUR_IMAGE_URL_HERE" alt="Trump Political Event Image" class="news-item-image">
                     <div class="news-item-content">
-                        <p class="original-headline">Original: "Former President Trump Addresses Supporters at Rally"</p>
-                        <button class="headline-button" onclick="toggleSummary('trumpSummary1')">Trump Speaks at Recent Rally</button>
-                        <div id="trumpSummary1" class="news-summary-container">
-                            <p class="news-summary-short">Former President Donald Trump held a rally where he addressed his supporters, discussing various political topics and his future plans.</p>
-                            <p class="news-summary-full">Former President Donald Trump recently held a political rally, gathering a large number of his supporters. During his speech, he covered a range of topics including current political events, economic policies, and hinted at his future involvement in national politics. The rally drew significant media attention and sparked discussions among political analysts.</p>
-                            <button class="read-more-button" onclick="toggleSummary('trumpSummary1')">Read More</button>
-                            <button class="read-aloud-button" onclick="readText('Trump Speaks at Recent Rally. Former President Donald Trump held a rally where he addressed his supporters, discussing various political topics and his future plans. Former President Donald Trump recently held a political rally, gathering a large number of his supporters. During his speech, he covered a range of topics including current political events, economic policies, and hinted at his future involvement in national politics. The rally drew significant media attention and sparked discussions among political analysts.')"><i class="fas fa-volume-up"></i></button>
+                        <p class="original-headline">Original Headline: Former President Trump Holds Rally Ahead of Key Primary Elections</p>
+                        <button class="headline-button" onclick="toggleSummary(this, 'trump1')">
+                            Trump Rallies Supporters Before Important Elections
+                            <button class="read-aloud-button" onclick="readAloud(event, 'Trump Rallies Supporters Before Important Elections')"><i class="fas fa-volume-up"></i></button>
+                        </button>
+                        <div class="news-summary-container" id="trump1">
+                            <p class="news-summary-short">
+                                Former President Donald Trump recently held a **political rally** to energize his base and support candidates in upcoming **primary elections**. His speeches focused on key campaign themes and criticisms of the current administration.
+                            </p>
+                            <p class="news-summary-full">
+                                Donald Trump, the former U.S. President, conducted a high-profile **political rally** in [State Name], drawing a large crowd of his supporters. The event was strategically timed ahead of crucial **primary elections** where he has endorsed several candidates. During his address, Trump reiterated his core campaign messages, including critiques of current government policies and promises of a "stronger America." The rally aimed to galvanize his voter base and exert influence on the outcomes of the primary contests, further shaping the political landscape.
+                            </p>
+                            <button class="read-more-button" onclick="toggleReadMore(this)">Read More</button>
+                        </div>
+                        <div class="learning-box">
+                            <h4>Key Vocabulary:</h4>
+                            <ul>
+                                <li><strong>political rally</strong> (n. phrase): A large public meeting held to support a political cause or candidate.</li>
+                                <li><strong>primary elections</strong> (n. phrase): Elections held to choose candidates for a main election.</li>
+                                <li><strong>energize his base</strong> (phr. verb): To motivate and excite his core supporters.</li>
+                                <li><strong>endorsed</strong> (v.): Gave official approval or support to.</li>
+                                <li><strong>galvanize</strong> (v.): To shock or excite (someone) into taking action.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <img src="YOUR_IMAGE_URL_HERE" alt="Legal Proceedings Image" class="news-item-image">
+                    <div class="news-item-content">
+                        <p class="original-headline">Original Headline: Legal Teams Prepare for Key Arguments in Trump-Related Case</p>
+                        <button class="headline-button" onclick="toggleSummary(this, 'trump2')">
+                            Legal Battle Continues in Case Involving Trump
+                            <button class="read-aloud-button" onclick="readAloud(event, 'Legal Battle Continues in Case Involving Trump')"><i class="fas fa-volume-up"></i></button>
+                        </button>
+                        <div class="news-summary-container" id="trump2">
+                            <p class="news-summary-short">
+                                **Legal teams** are making final preparations for crucial **arguments** in a prominent court case connected to former President Trump. The outcome of these **proceedings** could have significant political and legal implications.
+                            </p>
+                            <p class="news-summary-full">
+                                The highly anticipated legal battle involving former President Trump is moving into a critical phase as **legal teams** for both sides finalize their **arguments** ahead of a series of pivotal court hearings. The case, which centers on [briefly mention general topic, e.g., election-related challenges or business dealings], has garnered significant national attention. Legal experts suggest the upcoming **proceedings** could set important precedents and have far-reaching consequences for future political and legal landscapes. Public interest remains high as the legal maneuvers unfold.
+                            </p>
+                            <button class="read-more-button" onclick="toggleReadMore(this)">Read More</button>
+                        </div>
+                        <div class="learning-box">
+                            <h4>Key Vocabulary:</h4>
+                            <ul>
+                                <li><strong>legal teams</strong> (n. phrase): Groups of lawyers working on a case.</li>
+                                <li><strong>arguments</strong> (n.): Reasons or sets of reasons given with the aim of persuading others that an action or idea is right or wrong.</li>
+                                <li><strong>proceedings</strong> (n.): A course of action; a series of events performed to accomplish a task.</li>
+                                <li><strong>pivotal</strong> (adj.): Of crucial importance in relation to the development or success of something else.</li>
+                                <li><strong>precedents</strong> (n.): An earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances.</li>
+                                <li><strong>maneuvers</strong> (n.): A movement or series of moves requiring skill and care.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </section>
 
+            <hr>
+
+            <section class="previous-week-digest">
+                <h2>Previous Week's Digest</h2>
+                <p class="date-subheading">Headlines from July 19, 2025</p>
+
+                <div class="news-item">
+                    <img src="YOUR_IMAGE_URL_HERE" alt="Global Economy Chart Image" class="news-item-image">
+                    <div class="news-item-content">
+                        <p class="original-headline">Original Headline: Global Economy Shows Signs of Steady Recovery</p>
+                        <button class="headline-button" onclick="toggleSummary(this, 'prev1')">
+                            World Economy on Track for Steady Recovery
+                            <button class="read-aloud-button" onclick="readAloud(event, 'World Economy on Track for Steady Recovery')"><i class="fas fa-volume-up"></i></button>
+                        </button>
+                        <div class="news-summary-container" id="prev1">
+                            <p class="news-summary-short">
+                                The global economy continues to show encouraging **signs of recovery**, with many countries reporting increased **economic activity** and improving job markets.
+                            </p>
+                            <p class="news-summary-full">
+                                The latest global economic indicators suggest a consistent and steady **recovery** across major regions. Manufacturing output has risen, consumer spending is increasing, and unemployment rates are gradually declining in numerous nations. Analysts cautiously optimistically predict that this positive trend could lead to sustained **economic growth** in the coming quarters, provided no major unforeseen disruptions occur. International trade volumes are also showing a healthy rebound.
+                            </p>
+                            <button class="read-more-button" onclick="toggleReadMore(this)">Read More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <img src="YOUR_IMAGE_URL_HERE" alt="Space Exploration Image" class="news-item-image">
+                    <div class="news-item-content">
+                        <p class="original-headline">Original Headline: New Space Telescope Captures Stunning Images of Distant Galaxies</p>
+                        <button class="headline-button" onclick="toggleSummary(this, 'prev2')">
+                            New Space Telescope Reveals Amazing Galaxy Images
+                            <button class="read-aloud-button" onclick="readAloud(event, 'New Space Telescope Reveals Amazing Galaxy Images')"><i class="fas fa-volume-up"></i></button>
+                        </button>
+                        <div class="news-summary-container" id="prev2">
+                            <p class="news-summary-short">
+                                A recently launched **space telescope** has begun transmitting incredible new images of **distant galaxies**, offering astronomers unprecedented views of the universe.
+                            </p>
+                            <p class="news-summary-full">
+                                The highly anticipated [Telescope Name] **space telescope**, after successfully completing its calibration phase, has delivered its first batch of breathtaking images. These high-resolution photographs reveal previously unseen details of **distant galaxies**, including early star formation and galactic interactions. Astronomers are thrilled by the **unprecedented clarity** and the potential for new discoveries about the origins and evolution of the universe. This marks a new era in **astronomical research**.
+                            </p>
+                            <button class="read-more-button" onclick="toggleReadMore(this)">Read More</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr>
+
+            <section class="exercises-section">
+                <h2>Practice Exercises</h2>
+                <p class="exercise-score">Score: <span id="currentScore">0</span> / <span id="totalQuestions">0</span></p>
+
+                <h4>Fill in the Blanks</h4>
+                <div class="exercise-container">
+                    <p class="exercise-question">
+                        1. Leaders gathered at the climate __________ to discuss global warming.
+                        <input type="text" id="blank1" class="exercise-input" data-answer="summit">
+                    </p>
+                    <p class="exercise-question">
+                        2. Despite concerns about __________, stock markets are showing stability.
+                        <input type="text" id="blank2" class="exercise-input" data-answer="inflation">
+                    </p>
+                    <p class="exercise-question">
+                        3. Scientists announced a __________ in renewable energy storage.
+                        <input type="text" id="blank3" class="exercise-input" data-answer="breakthrough">
+                    </p>
+                    <p class="exercise-question">
+                        4. Archaeologists unearthed new __________ revealing an ancient city's history.
+                        <input type="text" id="blank4" class="exercise-input" data-answer="artifacts">
+                    </p>
+                    <p class="exercise-question">
+                        5. Two European __________ clubs clashed in a thrilling Champions League semi-final.
+                        <input type="text" id="blank5" class="exercise-input" data-answer="football">
+                    </p>
+                    <p class="exercise-question">
+                        6. Brazil has intensified efforts to combat __________ in the Amazon.
+                        <input type="text" id="blank6" class="exercise-input" data-answer="deforestation">
+                    </p>
+                    <div class="exercise-buttons">
+                        <button onclick="checkBlanks()">Check Answers</button>
+                        <button onclick="resetBlanks()">Reset</button>
+                    </div>
+                </div>
+
+                <h4>Drag and Drop Vocabulary</h4>
+                <div class="exercise-container">
+                    <div class="draggable-words" id="draggableWords">
+                        <div class="draggable-word" draggable="true" id="word-resilience">resilience</div>
+                        <div class="draggable-word" draggable="true" id="word-ecosystem">ecosystem</div>
+                        <div class="draggable-word" draggable="true" id="word-prolific">prolific</div>
+                        <div class="draggable-word" draggable="true" id="word-galvanize">galvanize</div>
+                        <div class="draggable-word" draggable="true" id="word-indicators">indicators</div>
+                    </div>
+                    <p class="exercise-question">
+                        1. The market's __________ despite economic shocks surprised analysts.
+                        <span class="droppable-blank" id="blank_dd1" data-answer="resilience"></span>
+                    </p>
+                    <p class="exercise-question">
+                        2. The Amazon rainforest is a vital __________ for the planet's climate.
+                        <span class="droppable-blank" id="blank_dd2" data-answer="ecosystem"></span>
+                    </p>
+                    <p class="exercise-question">
+                        3. The new striker is known for being a __________ goal-scorer.
+                        <span class="droppable-blank" id="blank_dd3" data-answer="prolific"></span>
+                    </p>
+                    <p class="exercise-question">
+                        4. Trump's rally aimed to __________ his voter base before the elections.
+                        <span class="droppable-blank" id="blank_dd4" data-answer="galvanize"></span>
+                    </p>
+                    <p class="exercise-question">
+                        5. Economic __________ suggest a positive trend in Brazil's economy.
+                        <span class="droppable-blank" id="blank_dd5" data-answer="indicators"></span>
+                    </p>
+                    <div class="exercise-buttons">
+                        <button onclick="checkDragAndDrop()">Check Drag & Drop</button>
+                        <button onclick="resetDragAndDrop()">Reset Drag & Drop</button>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 
     <footer>
         <div class="container">
-            <p>© 2025 by Daby. All rights reserved.</p>
+            <p>&copy; 2025 Global Headlines for English Learners. All rights reserved.</p>
             <p>
-                <a href="https://wa.me/5511986108003" target="_blank">Contact Us</a>
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Terms of Service</a> |
+                <a href="#">Contact Us</a>
             </p>
         </div>
     </footer>
 
-    <div id="messageBoxOverlay" class="message-box-overlay">
-        <div class="message-box-content">
-            <h4>Thank You!</h4>
-            <p id="messageBoxText">Your message has been sent.</p>
-            <button onclick="hideMessageBox()">OK</button>
-        </div>
-    </div>
-
     <div id="headlinesModalOverlay">
         <div id="headlinesModalContent">
-            <h3 id="modalHeadline"></h3>
-            <p id="modalSummary"></p>
+            <h3>All Headlines This Week</h3>
+            <p><strong>Featured:</strong> World Leaders Discuss Urgent Climate Action as Temperatures Soar</p>
+            <p><strong>More Headlines:</strong> Markets Hold Steady Despite Economic Concerns</p>
+            <p><strong>More Headlines:</strong> Scientists Achieve Major Energy Storage Breakthrough</p>
+            <p><strong>More Headlines:</strong> New Discoveries in Ancient City Uncover Rich History</p>
+            <p><strong>Football News:</strong> European Football Giants Face Off in Thrilling Match</p>
+            <p><strong>Football News:</strong> Star Player Makes Record Transfer to New Club</p>
+            <p><strong>News from Brazil:</strong> Brazil Steps Up Fight Against Amazon Deforestation</p>
+            <p><strong>News from Brazil:</strong> Brazilian Economy Begins to Recover and Grow</p>
+            <p><strong>News related to Donald Trump:</strong> Trump Rallies Supporters Before Important Elections</p>
+            <p><strong>News related to Donald Trump:</strong> Legal Battle Continues in Case Involving Trump</p>
             <button onclick="closeHeadlinesModal()">Close</button>
-            <button class="read-aloud-button" id="modalReadAloudButton" onclick=""><i class="fas fa-volume-up"></i> Read Aloud</button>
         </div>
     </div>
 
+    <div id="messageBoxOverlay" class="message-box-overlay">
+        <div class="message-box-content">
+            <h4>Exercise Complete!</h4>
+            <p id="messageBoxText"></p>
+            <button onclick="closeMessageBox()">OK</button>
+        </div>
+    </div>
 
     <script>
-        // Smooth scroll for navigation links (if you add them later)
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Function to toggle full/short summary
-        function toggleSummary(summaryId) {
-            const summaryContainer = document.getElementById(summaryId);
-            summaryContainer.classList.toggle('expanded');
-            const button = summaryContainer.nextElementSibling; // This assumes button is right after container
-            if (summaryContainer.classList.contains('expanded')) {
-                 // Change text to 'Read Less' for the button that opened it
-                 // This needs to target the correct button element.
-                 // The provided HTML structure places the button inside the container,
-                 // so we need to select it correctly.
-                summaryContainer.querySelector('.read-more-button').textContent = 'Read Less';
-            } else {
-                summaryContainer.querySelector('.read-more-button').textContent = 'Read More';
-            }
-        }
-
-
-        // Universal Text-to-Speech Function
-        function readText(text) {
-            if ('speechSynthesis' in window) {
-                const utterance = new SpeechSynthesisUtterance(text);
-                utterance.lang = 'en-US'; // Set language to US English
-                window.speechSynthesis.speak(utterance);
-            } else {
-                alert('Sorry, your browser does not support text-to-speech. Please try a different browser like Chrome, Firefox, or Edge.');
-            }
-        }
-
-        // Fill-in-the-Blanks Logic
+        const synth = window.speechSynthesis;
         let score = 0;
         let totalQuestions = 0;
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const blankInputs = document.querySelectorAll('.exercise-input');
-            totalQuestions = blankInputs.length; // Initialize totalQuestions on load
-            updateScoreDisplay(); // Display initial score (0/0)
+        function readAloud(event, text) {
+            event.stopPropagation(); // Prevent toggling summary when clicking read aloud
+            if (synth.speaking) {
+                synth.cancel();
+            }
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+            synth.speak(utterance);
+        }
 
-            blankInputs.forEach(input => {
-                input.addEventListener('input', () => {
-                    input.classList.remove('input-correct', 'input-incorrect');
-                });
-            });
-        });
+        function toggleSummary(button, summaryId) {
+            const container = document.getElementById(summaryId);
+            const shortSummary = container.querySelector('.news-summary-short');
+            const fullSummary = container.querySelector('.news-summary-full');
+            const readMoreButton = container.querySelector('.read-more-button');
 
+            container.classList.toggle('expanded');
+            if (container.classList.contains('expanded')) {
+                readMoreButton.textContent = 'Read Less';
+            } else {
+                readMoreButton.textContent = 'Read More';
+            }
+        }
+
+        function toggleReadMore(button) {
+            const container = button.closest('.news-summary-container');
+            container.classList.toggle('expanded');
+            if (container.classList.contains('expanded')) {
+                button.textContent = 'Read Less';
+            } else {
+                button.textContent = 'Read More';
+            }
+        }
+
+        function openHeadlinesModal() {
+            document.getElementById('headlinesModalOverlay').classList.add('show');
+        }
+
+        function closeHeadlinesModal() {
+            document.getElementById('headlinesModalOverlay').classList.remove('show');
+        }
+
+        function showMessageBox(title, message) {
+            const messageBoxOverlay = document.getElementById('messageBoxOverlay');
+            const messageBoxTitle = messageBoxOverlay.querySelector('h4');
+            const messageBoxText = document.getElementById('messageBoxText');
+
+            messageBoxTitle.textContent = title;
+            messageBoxText.textContent = message;
+            messageBoxOverlay.classList.add('show');
+        }
+
+        function closeMessageBox() {
+            document.getElementById('messageBoxOverlay').classList.remove('show');
+        }
+
+        // --- Fill in the Blanks Exercise ---
         function checkBlanks() {
-            score = 0;
-            const blankInputs = document.querySelectorAll('.exercise-input');
-            blankInputs.forEach(input => {
+            const inputs = document.querySelectorAll('#blank1, #blank2, #blank3, #blank4, #blank5, #blank6');
+            let correctCount = 0;
+            inputs.forEach(input => {
                 const userAnswer = input.value.trim().toLowerCase();
                 const correctAnswer = input.dataset.answer.toLowerCase();
-
                 if (userAnswer === correctAnswer) {
-                    input.classList.add('input-correct');
                     input.classList.remove('input-incorrect');
-                    score++;
+                    input.classList.add('input-correct');
+                    correctCount++;
                 } else {
-                    input.classList.add('input-incorrect');
                     input.classList.remove('input-correct');
+                    input.classList.add('input-incorrect');
                 }
             });
-            updateScoreDisplay();
+            score += correctCount;
+            totalQuestions += inputs.length;
+            updateScore();
+            showMessageBox('Fill in the Blanks Result', `You got ${correctCount} out of ${inputs.length} correct!`);
         }
 
         function resetBlanks() {
-            const blankInputs = document.querySelectorAll('.exercise-input');
-            blankInputs.forEach(input => {
+            const inputs = document.querySelectorAll('#blank1, #blank2, #blank3, #blank4, #blank5, #blank6');
+            inputs.forEach(input => {
                 input.value = '';
                 input.classList.remove('input-correct', 'input-incorrect');
             });
-            score = 0;
-            updateScoreDisplay();
         }
 
-        function updateScoreDisplay() {
-            document.getElementById('score').textContent = `Score: ${score}/${totalQuestions}`;
-        }
-
-
-        // Drag and Drop Logic
-        const draggableWordsContainer = document.getElementById('draggableWordsContainer');
-        const droppableBlanks = document.querySelectorAll('.droppable-blank');
+        // --- Drag and Drop Exercise ---
         let draggedItem = null;
 
-        draggableWordsContainer.addEventListener('dragstart', (e) => {
+        document.getElementById('draggableWords').addEventListener('dragstart', (e) => {
             if (e.target.classList.contains('draggable-word')) {
                 draggedItem = e.target;
                 setTimeout(() => {
@@ -1233,17 +1557,19 @@
             }
         });
 
-        draggableWordsContainer.addEventListener('dragend', (e) => {
-            if (e.target.classList.contains('draggable-word')) {
-                e.target.classList.remove('dragging');
+        document.getElementById('draggableWords').addEventListener('dragend', (e) => {
+            if (draggedItem) {
+                draggedItem.classList.remove('dragging');
                 draggedItem = null;
             }
         });
 
-        droppableBlanks.forEach(blank => {
+        document.querySelectorAll('.droppable-blank').forEach(blank => {
             blank.addEventListener('dragover', (e) => {
                 e.preventDefault(); // Allow drop
-                blank.classList.add('drag-over');
+                if (draggedItem) {
+                    blank.classList.add('drag-over');
+                }
             });
 
             blank.addEventListener('dragleave', () => {
@@ -1253,85 +1579,87 @@
             blank.addEventListener('drop', (e) => {
                 e.preventDefault();
                 blank.classList.remove('drag-over');
-
-                if (draggedItem && !blank.textContent.trim()) { // Only drop if blank is empty
-                    blank.textContent = draggedItem.textContent;
-                    blank.dataset.droppedWord = draggedItem.dataset.word; // Store the dropped word
-                    draggedItem.remove(); // Remove word from draggable area
+                if (draggedItem && blank.children.length === 0) {
+                    blank.appendChild(draggedItem);
+                    draggedItem.style.position = 'static'; // Reset position
+                    draggedItem.style.left = '';
+                    draggedItem.style.top = '';
                 }
             });
         });
 
         function checkDragAndDrop() {
-            let correctDrops = 0;
-            let dragDropTotal = droppableBlanks.length;
-
-            droppableBlanks.forEach(blank => {
+            const blanks = document.querySelectorAll('.droppable-blank');
+            let correctCount = 0;
+            blanks.forEach(blank => {
                 blank.classList.remove('correct-drop', 'incorrect-drop');
-                const droppedWord = blank.dataset.droppedWord;
-                const correctWord = blank.dataset.correctWord;
-
-                if (droppedWord && droppedWord.toLowerCase() === correctWord.toLowerCase()) {
-                    blank.classList.add('correct-drop');
-                    correctDrops++;
+                if (blank.children.length > 0) {
+                    const droppedWord = blank.children[0].textContent.trim().toLowerCase();
+                    const correctAnswer = blank.dataset.answer.toLowerCase();
+                    if (droppedWord === correctAnswer) {
+                        blank.classList.add('correct-drop');
+                        correctCount++;
+                    } else {
+                        blank.classList.add('incorrect-drop');
+                    }
                 } else {
-                    blank.classList.add('incorrect-drop');
+                    blank.classList.add('incorrect-drop'); // Mark as incorrect if empty
                 }
             });
-            // You might want a separate score for drag and drop or combine it
-            // For now, let's just show an alert or update a separate score.
-            showMessageBox(`Drag & Drop Score: ${correctDrops}/${dragDropTotal}`, 'Congratulations!', 'Oops!');
+            score += correctCount;
+            totalQuestions += blanks.length;
+            updateScore();
+            showMessageBox('Drag & Drop Result', `You got ${correctCount} out of ${blanks.length} correct!`);
         }
 
         function resetDragAndDrop() {
-            droppableBlanks.forEach(blank => {
-                if (blank.dataset.droppedWord) {
-                    // Recreate the draggable word and add it back to the container
-                    const word = document.createElement('div');
-                    word.classList.add('draggable-word');
-                    word.setAttribute('draggable', 'true');
-                    word.dataset.word = blank.dataset.droppedWord;
-                    word.textContent = blank.dataset.droppedWord;
-                    draggableWordsContainer.appendChild(word);
-                    blank.textContent = ''; // Clear the blank
-                    delete blank.dataset.droppedWord; // Remove stored word
+            const blanks = document.querySelectorAll('.droppable-blank');
+            const draggableWordsContainer = document.getElementById('draggableWords');
+            const initialWords = []; // Store initial words to re-add them
+
+            // Collect all words from blanks and original draggable area
+            blanks.forEach(blank => {
+                if (blank.children.length > 0) {
+                    initialWords.push(blank.children[0]);
+                    blank.innerHTML = ''; // Clear the blank
+                    blank.classList.remove('correct-drop', 'incorrect-drop');
                 }
-                blank.classList.remove('correct-drop', 'incorrect-drop');
             });
-             // Also reset the original draggable words if they were removed and not replaced
-             // This part ensures all original words are back if they were removed without being dropped
-             const initialWords = ['sustainable', 'pledged', 'crisis', 'accelerate'];
-             const currentWords = Array.from(draggableWordsContainer.children).map(el => el.dataset.word);
-             initialWords.forEach(word => {
-                 if (!currentWords.includes(word)) {
-                     const newWord = document.createElement('div');
-                     newWord.classList.add('draggable-word');
-                     newWord.setAttribute('draggable', 'true');
-                     newWord.dataset.word = word;
-                     newWord.textContent = word;
-                     draggableWordsContainer.appendChild(newWord);
-                 }
-             });
+
+            document.querySelectorAll('.draggable-word').forEach(word => {
+                initialWords.push(word);
+            });
+
+            // Re-add words to the draggable container
+            draggableWordsContainer.innerHTML = ''; // Clear original container
+            // Re-add them in their original order (or a sorted order if preferred)
+            const wordsInOrder = [
+                document.getElementById('word-resilience'),
+                document.getElementById('word-ecosystem'),
+                document.getElementById('word-prolific'),
+                document.getElementById('word-galvanize'),
+                document.getElementById('word-indicators')
+            ];
+            wordsInOrder.forEach(word => {
+                draggableWordsContainer.appendChild(word);
+                word.style.position = 'static'; // Ensure no inline styles remain
+                word.classList.remove('dragging');
+            });
         }
 
-
-        // Message Box Functions
-        function showMessageBox(message, title = 'Info', success = true) {
-            const overlay = document.getElementById('messageBoxOverlay');
-            const titleElement = overlay.querySelector('h4');
-            const messageElement = document.getElementById('messageBoxText');
-
-            titleElement.textContent = title;
-            messageElement.textContent = message;
-
-            overlay.classList.add('show');
+        function updateScore() {
+            document.getElementById('currentScore').textContent = score;
+            document.getElementById('totalQuestions').textContent = totalQuestions;
         }
 
-        function hideMessageBox() {
-            document.getElementById('messageBoxOverlay').classList.remove('show');
-        }
+        // Initialize total questions on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const blankInputs = document.querySelectorAll('.exercise-input');
+            const dragDropBlanks = document.querySelectorAll('.droppable-blank');
+            totalQuestions = blankInputs.length + dragDropBlanks.length;
+            updateScore();
+        });
 
     </script>
-
 </body>
 </html>
