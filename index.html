@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Headlines for English Learners - Weekly Digest</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Basic Reset & Body Styling */
+        body {
+            font-family: 'Merriweather', serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            color: #e2e8f0; /* Light grey text for dark background, applied globally */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden; /* Prevent horizontal scroll from animations */
+
+            /* Dark Space Black Animated Background with Stars */
+            background: linear-gradient(135deg, #000000, #0a0a0a, #1a1a1a); /* Deep black to very dark grey gradient */
+            background-size: 400% 400%; /* Larger than viewport for animation */
+            animation: gradientAnimation 15s ease infinite; /* Slow, smooth animation */
+            position: relative; /* Needed for pseudo-element positioning */
+            z-index: 0; /* Ensure body is behind stars if stars are z-index -1 */
+        }
+
+        /* Starfield Effect */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Behind content */
+            /* Creates tiny white dots (stars) with varying sizes */
+            background: radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+                                radial-gradient(1.5px 1.5px at 60px 70px, #eee, rgba(0,0,0,0)),
+                                radial-gradient(2.5px 2.5px at 100px 50px, #eee, rgba(0,0,0,0)),
+                                radial-gradient(2px 2px at 150px 20px, #eee, rgba(0,0,0,0)),
+                                radial-gradient(1.8px 1.8px at 180px 90px, #eee, rgba(0,0,0,0));
+            background-size: 200px 200px; /* Size of the star pattern */
+            animation: starfieldAnimation 120s linear infinite; /* Slow, continuous movement */
+        }
+
+        @keyframes starfieldAnimation {
+            from { background-position: 0 0; }
+            to { background-position: 200px 200px; } /* Move stars diagonally */
+        }
+
+        /* Keyframes for the gradient animation */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Container for content width */
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 25px 0;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #0d1734; /* Even darker blue for header */
+            color: #ffffff;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Stronger shadow on black */
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            letter-spacing: 0.5px;
+            position: relative; /* For z-index to ensure it's above stars */
+            z-index: 1;
+        }
+
+        header h1 {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2em;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 10px; /* Space below title */
+            color: #00eaff; /* Neon Blue */
+            text-shadow: 0 0 12px rgba(0, 220, 255, 0.9), 0 0 20px rgba(0, 220, 255, 0.5); /* Stronger neon glow effect */
+        }
+
+        header .subtitle { /* New style for subtitles */
+            font-size: 1.1em;
+            opacity: 0.9;
+            margin: 5px auto; /* Space between subtitles */
+            max-width: 70%; /* Constrain width for better readability */
+            color: #e2e8f0; /* Light gray */
+        }
+
+        header .tagline { /* New style for taglines */
+            font-size: 1.0em;
+            opacity: 0.7;
+            margin: 5px auto 15px auto; /* Space below tagline before date */
+            max-width: 80%; /* Constrain width for better readability */
+            color: #e2e8f0; /* Light gray */
+        }
+
+        header .date {
+            font-size: 1.2em;
+            opacity: 0.85;
+            margin-top: 10px;
+            font-weight: 400;
+            color: #e2e8f0; /* Light gray */
+        }
+
+        .header-connect {
+            margin-top: 20px; /* Space above connect links */
+            font-size: 1em;
+        }
+
+        .header-connect a {
+            color: #00eaff; /* Neon Blue for links */
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 10px; /* Spacing between links */
+            transition: text-decoration 0.2s ease;
+        }
+
+        .header-connect a:hover {
+            text-decoration: underline;
+        }
+
+        .header-connect a i {
+            margin-right: 5px; /* Space between icon and text */
+        }
+
+        /* New style for purpose/aim */
+        .purpose-aim {
+            font-size: 0.95em;
+            opacity: 0.8;
+            margin-top: 10px;
+            margin-bottom: 15px; /* Space below this text */
+            color: #b0c4de; /* A slightly lighter blue-grey */
+        }
+
+        /* Style for the buttons in header */
+        .header-button {
+            display: inline-block; /* Allows padding and margin, and sits nicely with text */
+            background-color: #00eaff; /* Neon blue */
+            color: #0d1734; /* Dark blue text */
+            padding: 12px 30px;
+            margin: 25px 10px 0 10px; /* Space above and between buttons */
+            border-radius: 30px;
+            text-decoration: none; /* Remove underline */
+            font-weight: 700;
+            font-size: 1.1em;
+            letter-spacing: 0.8px;
+            box-shadow: 0 0 15px rgba(0, 220, 255, 0.7), 0 5px 15px rgba(0, 0, 0, 0.4); /* Neon glow and shadow */
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            outline: none; /* Remove outline on focus */
+            border: none; /* Ensure no default button border */
+        }
+
+        .header-button:hover {
+            background-color: #66ffff; /* Brighter neon blue on hover */
+            transform: translateY(-5px) scale(1.05); /* More pronounced pop effect */
+            box-shadow: 0 0 30px rgba(0, 255, 255, 1), 0 10px 25px rgba(0, 0, 0, 0.7); /* More intense glow */
+        }
+
+
+        /* Main Content Section Styling */
+        main {
+            padding-top: 40px;
+            position: relative; /* For z-index to ensure it's above stars */
+            z-index: 1;
+        }
+
+        /* The .featured-story class has been removed from the HTML for the featured section.
+            Therefore, these styles no longer apply to it, effectively removing the "box". */
+        .featured-story {
+            /* This class is now unused for the main featured section,
+                but is kept here in case it's mistakenly re-added elsewhere. */
+            background: linear-gradient(145deg, #15325c, #3a005f); /* Deep blue to vibrant purple */
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            border: 1px solid #5d4a6f; /* Complementary border */
+            color: #e2e8f0; /* Light gray for content within boxes */
+        }
+
+        .more-headlines, .previous-week-digest, .exercises-section, .football-news-section, .brazil-section, .trump-section {
+            background: linear-gradient(145deg, rgba(15, 77, 74, 0.4), rgba(0, 112, 101, 0.4)); /* Slightly transparent dark teal to brighter green-teal */
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: inset 0 0 15px rgba(0, 234, 255, 0.15), 0 8px 20px rgba(0, 0, 0, 0.4); /* Inner neon glow and outer shadow */
+            border: 1px solid rgba(0, 234, 255, 0.3); /* Subtle neon border */
+            color: #e2e8f0; /* Light gray for content within boxes */
+            backdrop-filter: blur(3px); /* Subtle blur for modern glass-like effect */
+        }
+
+        .news-image {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            border: 1px solid #3d4a6f; /* Kept a general blue-ish border for images */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5); /* Stronger shadow for images */
+        }
+
+        .original-headline {
+            font-size: 1em;
+            color: #cbd5e1; /* Slightly darker light gray for original headline */
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: #00eaff; /* Neon Blue */
+            text-shadow: 0 0 10px rgba(0, 220, 255, 0.8), 0 0 15px rgba(0, 220, 255, 0.6); /* Stronger neon glow effect */
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 700;
+            font-size: 2.4em;
+        }
+
+        h4 { /* Styling for new sub-category headings */
+            font-family: 'Playfair Display', serif;
+            color: #00eaff; /* Neon Blue */
+            text-shadow: 0 0 8px rgba(0, 220, 255, 0.7); /* Slightly less intense neon glow for sub-headings */
+            font-size: 1.7em;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(0, 234, 255, 0.3); /* Subtle neon border */
+            padding-bottom: 10px;
+        }
+
+        /* Style for the interactive headline buttons */
+        .headline-button {
+            background: none; /* No background for button itself */
+            border: none;
+            padding: 0;
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            color: #00eaff; /* Neon Blue */
+            text-shadow: 0 0 8px rgba(0, 220, 255, 0.7); /* Neon glow for buttons */
+            font-size: 1.9em; /* Matches former h3 size */
+            font-weight: 700;
+            line-height: 1.4; /* Adjusted for better readability as a button */
+            text-align: left; /* Align text left */
+            cursor: pointer;
+            width: 100%; /* Ensure it takes full width */
+            transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease; /* Smooth transition for hover */
+        }
+
+        .headline-button:hover {
+            color: #66ffff; /* Brighter neon blue on hover */
+            transform: translateX(8px) scale(1.01); /* More pronounced movement on hover */
+            text-shadow: 0 0 15px rgba(0, 255, 255, 1); /* More intense glow on hover */
+        }
+
+        .news-summary, .news-summary-short {
+            font-size: 1.15em;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            color: #e2e8f0; /* Light gray */
+        }
+        .news-summary-short {
+            font-size: 1.05em;
+            margin-bottom: 15px; /* Added margin for consistency below simplified headlines */
+        }
+
+        /* Read Aloud Button Styling */
+        .read-aloud-button {
+            background: none;
+            border: none;
+            color: #00eaff; /* Neon blue */
+            font-size: 1.1em;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: color 0.2s ease, transform 0.2s ease;
+            outline: none;
+        }
+
+        .read-aloud-button:hover {
+            color: #66ffff; /* Brighter neon */
+            transform: scale(1.1);
+        }
+        .read-aloud-button:active {
+            transform: scale(0.9);
+        }
+
+        /* Summary expander */
+        .news-summary-container {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .news-summary-full {
+            display: none; /* Hidden by default */
+        }
+
+        .news-summary-container.expanded .news-summary-short {
+            display: none; /* Hide short when expanded */
+        }
+
+        .news-summary-container.expanded .news-summary-full {
+            display: block; /* Show full when expanded */
+        }
+
+        .read-more-button {
+            background-color: #0a203a; /* Dark blue background */
+            color: #00eaff; /* Neon blue text */
+            border: 1px solid #00eaff;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-top: 10px;
+            transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 0 8px rgba(0, 220, 255, 0.4);
+        }
+
+        .read-more-button:hover {
+            background-color: #00eaff;
+            color: #0d1734;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+        }
+
+        /* Learning Box Styling */
+        .learning-box {
+            background-color: rgba(42, 61, 96, 0.6); /* Slightly transparent dark blue, blends with gradients */
+            border-left: 5px solid #00eaff; /* Neon Blue accent */
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+            box-shadow: inset 0 0 10px rgba(0, 220, 255, 0.2), 0 5px 15px rgba(0,0,0,0.3); /* Inner glow and outer shadow */
+            color: #e2e8f0; /* Light text */
+            backdrop-filter: blur(2px); /* Subtle blur */
+        }
+
+        .learning-box h4 {
+            margin-top: 0;
+            color: #00eaff; /* Neon Blue for heading */
+            text-shadow: 0 0 8px rgba(0, 220, 255, 0.6);
+            font-size: 1.3em;
+            margin-bottom: 12px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .learning-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        .learning-box li {
+            margin-bottom: 12px;
+            font-size: 1.05em;
+            color: #e2e8f0; /* Light gray */
+        }
+
+        .learning-box strong {
+            color: #66ffff; /* Brighter neon blue for strong terms */
+            font-weight: 700;
+        }
+
+        .discussion-prompt {
+            font-style: italic;
+            color: #cbd5e1; /* Light gray */
+            margin-top: 30px;
+            border-top: 1px dashed #5a6268; /* Visible dashed border */
+            padding-top: 20px;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        /* Vocabulary Dropdown Styling */
+        .vocabulary-dropdown {
+            margin-top: 25px;
+            margin-bottom: 25px;
+            background-color: rgba(30, 40, 60, 0.7); /* Slightly lighter transparent background */
+            border-radius: 10px;
+            padding: 15px 25px;
+            box-shadow: inset 0 0 10px rgba(0, 234, 255, 0.1), 0 4px 10px rgba(0, 0, 0, 0.3); /* Inner glow and outer shadow */
+            border: 1px solid rgba(0, 234, 255, 0.4); /* Subtle neon border */
+            backdrop-filter: blur(2px); /* Subtle blur */
+        }
+
+        .vocabulary-summary {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #00eaff; /* Neon Blue for summary text */
+            text-shadow: 0 0 6px rgba(0, 220, 255, 0.6);
+            cursor: pointer;
+            padding: 5px 0;
+            outline: none;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .vocabulary-summary:hover {
+            color: #66ffff; /* Brighter neon on hover */
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.9);
+        }
+
+        .vocabulary-summary::-webkit-details-marker {
+            color: #00eaff; /* Neon blue for the dropdown arrow */
+        }
+        .vocabulary-summary::marker {
+            color: #00eaff; /* Neon blue for the dropdown arrow (standard) */
+        }
+
+        .vocabulary-content {
+            padding-top: 15px;
+            border-top: 1px dashed rgba(0, 234, 255, 0.3); /* Stronger dashed neon line */
+            margin-top: 10px;
+        }
+
+        .vocabulary-content h4 {
+            font-size: 1.2em;
+            color: #00eaff; /* Neon blue for inner headings */
+            text-shadow: 0 0 5px rgba(0, 220, 255, 0.5);
+            margin-bottom: 10px;
+            border-bottom: none; /* Remove extra border from general h4 style */
+            padding-bottom: 0;
+        }
+
+        .vocabulary-content ul {
+            list-style: disc; /* Use discs for list items */
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .vocabulary-content li {
+            font-size: 0.95em;
+            margin-bottom: 8px;
+            color: #e2e8f0; /* Light gray for list items */
+        }
+
+        .vocabulary-content strong {
+            color: #66ffff; /* Brighter neon for strong terms */
+        }
+
+
+        /* Custom Message Box Styles */
+        .message-box-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .message-box-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .message-box-content {
+            background: linear-gradient(135deg, #1f2a32, #2b3a42); /* Dark gradient for the box */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6); /* Stronger shadow */
+            text-align: center;
+            color: #e2e8f0; /* Light gray */
+            max-width: 400px;
+            width: 90%;
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+        }
+
+        .message-box-overlay.show .message-box-content {
+            transform: translateY(0);
+        }
+
+        .message-box-content h4 {
+            margin-top: 0;
+            color: #00eaff; /* Neon Blue */
+            text-shadow: 0 0 8px rgba(0, 220, 255, 0.6);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .message-box-content p {
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            color: #e2e8f0; /* Light gray */
+        }
+
+        .message-box-content button {
+            background-color: #00eaff; /* Neon blue button */
+            color: #0d1734; /* Dark text on neon button */
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 12px rgba(0, 220, 255, 0.8); /* Stronger neon glow for button */
+        }
+
+        .message-box-content button:hover {
+            background-color: #66ffff;
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 1);
+        }
+
+
+        /* Separator Line */
+        hr {
+            border: 0;
+            height: 2px;
+            background-image: linear-gradient(to right, rgba(0, 234, 255, 0), rgba(0, 234, 255, 0.5), rgba(0, 234, 255, 0)); /* Neon gradient for separator */
+            margin: 50px auto;
+            width: 70%;
+            box-shadow: 0 0 10px rgba(0, 234, 255, 0.5); /* Subtle glow */
+        }
+
+        /* More Headlines Section - Individual News Item */
+        .more-headlines h2, .previous-week-digest h2, .football-news-section h2, .brazil-section h2, .trump-section h2 { /* Apply to all main section headlines */
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .previous-week-digest .date-subheading { /* Styling for previous week's date */
+            text-align: center;
+            font-size: 1.1em;
+            color: #cbd5e1; /* Light gray */
+            margin-bottom: 30px;
+        }
+
+
+        .news-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 1px dashed rgba(0, 234, 255, 0.2); /* Neon dashed separator */
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .news-item-image {
+            width: 160px;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 25px;
+            flex-shrink: 0;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.4); /* Stronger shadow */
+        }
+
+        .news-item-content {
+            flex-grow: 1;
+        }
+
+        .news-item .original-headline {
+            margin-bottom: 5px;
+        }
+
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 35px 0;
+            color: #cbd5e1; /* Light gray for footer text */
+            font-size: 0.95em;
+            border-top: 1px solid rgba(0, 234, 255, 0.3); /* Neon border */
+            margin-top: 50px;
+            background-color: #0d1734; /* Matches header dark blue */
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            box-shadow: 0 -6px 15px rgba(0,0,0,0.4); /* Stronger shadow */
+            position: relative; /* For z-index to ensure it's above stars */
+            z-index: 1;
+        }
+
+        footer a {
+            color: #00eaff; /* Neon Blue for footer links */
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Exercises specific styling */
+        .exercises-section {
+            background: linear-gradient(145deg, rgba(48, 31, 64, 0.4), rgba(92, 44, 109, 0.4)); /* A purple-ish gradient for exercises */
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: inset 0 0 15px rgba(122, 74, 156, 0.2), 0 8px 20px rgba(0, 0, 0, 0.4); /* Inner neon glow and outer shadow */
+            border: 1px solid rgba(122, 74, 156, 0.5); /* Complementary border */
+            color: #e2e8f0;
+            backdrop-filter: blur(3px); /* Subtle blur for modern glass-like effect */
+        }
+
+        .exercise-score {
+            text-align: right;
+            font-size: 1.1em;
+            color: #66ffff;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .exercise-container {
+            margin-bottom: 40px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.08); /* Slightly more visible subtle background for internal exercise sections */
+            box-shadow: inset 0 0 8px rgba(0, 234, 255, 0.1); /* Inner glow */
+        }
+
+        .exercise-question {
+            margin-bottom: 20px;
+            line-height: 2.2; /* More space for blanks */
+        }
+
+        .exercise-input {
+            background-color: rgba(0, 0, 0, 0.4); /* Slightly darker transparent */
+            border: 1px solid #00eaff; /* Neon border */
+            border-radius: 5px;
+            color: #66ffff; /* Neon text in input */
+            padding: 8px 12px;
+            font-size: 1em;
+            margin: 0 5px;
+            width: 150px; /* Fixed width for consistency */
+            text-align: center;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .exercise-input:focus {
+            border-color: #66ffff;
+            box-shadow: 0 0 12px rgba(102, 255, 255, 0.9); /* Stronger glow on focus */
+        }
+
+        .input-correct {
+            border-color: #33ff66; /* Green for correct */
+            box-shadow: 0 0 10px rgba(51, 255, 102, 0.7);
+        }
+
+        .input-incorrect {
+            border-color: #ff3333; /* Red for incorrect */
+            box-shadow: 0 0 10px rgba(255, 51, 51, 0.7);
+        }
+
+        .exercise-buttons {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .exercise-buttons button {
+            background-color: #00eaff; /* Neon blue button */
+            color: #0d1734;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 700;
+            margin: 0 10px;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 12px rgba(0, 220, 255, 0.8);
+        }
+
+        .exercise-buttons button:hover {
+            background-color: #66ffff;
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 1);
+        }
+
+        /* Drag and Drop Specific Styling */
+        .draggable-words {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            background-color: rgba(0, 0, 0, 0.5); /* Slightly darker transparent */
+            border-radius: 10px;
+            border: 1px dashed rgba(0, 234, 255, 0.3); /* Stronger neon border */
+            box-shadow: inset 0 0 10px rgba(0, 234, 255, 0.2); /* Inner glow */
+        }
+
+        .draggable-word {
+            background-color: #0a203a; /* Darker blue for draggable words */
+            color: #00eaff; /* Neon text */
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: grab;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+            border: 1px solid rgba(0, 234, 255, 0.6); /* Stronger neon border */
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            font-weight: 600;
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+
+        .draggable-word:hover {
+            background-color: #1a304a;
+            transform: translateY(-5px) scale(1.05); /* More pronounced pop */
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 255, 255, 0.9); /* More intense glow */
+        }
+
+        .draggable-word.dragging {
+            opacity: 0.6; /* More opaque when dragging */
+            border-style: solid; /* Make border solid when dragging */
+        }
+
+        .droppable-blank {
+            display: inline-block;
+            width: 150px; /* Same width as inputs */
+            height: 40px; /* Enough height for a word */
+            background-color: rgba(255, 255, 255, 0.1); /* Slightly more visible background */
+            border: 1px dashed #00eaff; /* Neon dashed border */
+            border-radius: 5px;
+            vertical-align: middle;
+            text-align: center;
+            line-height: 40px; /* Center text vertically */
+            margin: 0 5px;
+            transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+            font-weight: 600;
+            color: #66ffff; /* Neon text for dropped words */
+            box-shadow: inset 0 0 5px rgba(0, 234, 255, 0.1); /* Subtle inner glow */
+        }
+
+        .droppable-blank.drag-over {
+            background-color: rgba(0, 234, 255, 0.2); /* More intense neon background on drag over */
+            border-color: #66ffff;
+            box-shadow: inset 0 0 10px rgba(0, 234, 255, 0.5);
+        }
+
+        .droppable-blank.correct-drop {
+            background-color: rgba(51, 255, 102, 0.3); /* Green tint */
+            border-color: #33ff66;
+            box-shadow: inset 0 0 8px rgba(51, 255, 102, 0.8);
+        }
+
+        .droppable-blank.incorrect-drop {
+            background-color: rgba(255, 51, 51, 0.3); /* Red tint */
+            border-color: #ff3333;
+            box-shadow: inset 0 0 8px rgba(255, 51, 51, 0.8);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+
+            .featured-story, .more-headlines, .previous-week-digest, .exercises-section, .football-news-section, .brazil-section, .trump-section {
+                padding: 25px;
+            }
+
+            .news-image {
+                height: 220px;
+                border-radius: 8px;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+            .headline-button {
+                font-size: 1.6em; /* Adjust button font size for smaller screens */
+            }
+
+            .news-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                border-bottom: 1px dashed rgba(0, 234, 255, 0.2); /* Neon dashed separator */
+                margin-bottom: 25px;
+                padding-bottom: 20px;
+            }
+            .news-item:last-child {
+                border-bottom: none;
+            }
+
+            .news-item-image {
+                margin-right: 0;
+                margin-bottom: 20px;
+                width: 95%;
+                height: 180px;
+            }
+
+            .news-item-content {
+                width: 100%;
+            }
+
+            header .subtitle, header .tagline {
+                max-width: 90%; /* Allow more width on small screens */
+            }
+
+            .exercise-input, .droppable-blank {
+                width: 100%; /* Full width for smaller screens */
+                margin: 5px 0;
+            }
+            .draggable-words {
+                justify-content: space-around; /* Distribute words better */
+            }
+        }
+
+        /* Styles for the Headlines Modal */
+        #headlinesModalOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85); /* Darker overlay */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1001; /* Above message box */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        #headlinesModalOverlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #headlinesModalContent {
+            background: linear-gradient(135deg, #10182a, #1a233b); /* Dark blue gradient */
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8); /* More pronounced shadow */
+            text-align: center;
+            color: #e2e8f0;
+            max-width: 600px;
+            width: 90%;
+            transform: translateY(-30px) scale(0.95);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            border: 1px solid rgba(0, 234, 255, 0.4); /* Neon border */
+            backdrop-filter: blur(5px); /* Stronger blur for the modal itself */
+        }
+
+        #headlinesModalOverlay.show #headlinesModalContent {
+            transform: translateY(0) scale(1);
+        }
+
+        #headlinesModalContent h3 {
+            color: #00eaff; /* Neon Blue */
+            text-shadow: 0 0 10px rgba(0, 220, 255, 0.8);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+            margin-bottom: 25px;
+        }
+
+        #headlinesModalContent p {
+            font-size: 1.1em;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        #headlinesModalContent button {
+            background-color: #00eaff;
+            color: #0d1734;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 12px rgba(0, 220, 255, 0.8);
+        }
+
+        #headlinesModalContent button:hover {
+            background-color: #66ffff;
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Global Pulse</h1>
+            <p class="subtitle">Your Weekly Digest for English Learners</p>
+            <p class="tagline">Navigate the world's news, expand your vocabulary, and master English!</p>
+            <p class="date">July 26, 2025</p>
+            <p class="purpose-aim">This digest aims to help English learners improve their comprehension and vocabulary through current global events.</p>
+            <div class="header-connect">
+                <a href="#vocabulary-section"><i class="fas fa-book"></i> Vocabulary</a>
+                <a href="#exercises-section"><i class="fas fa-brain"></i> Exercises</a>
+                <a href="#"><i class="fas fa-envelope"></i> Subscribe</a>
+            </div>
+            <button class="header-button" onclick="openHeadlinesModal()">View All Headlines</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="more-headlines">
+                <h2>Top Global Stories</h2>
+                
+                <div class="news-item">
+                    <img src="https://via.placeholder.com/160x110?text=Thailand+Cambodia" alt="Thailand-Cambodia Border" class="news-item-image">
+                    <div class="news-item-content">
+                        <p class="original-headline">Original Headline: Deadly Border Clashes Continue Between Thailand and Cambodia</p>
+                        <button class="headline-button" onclick="toggleSummary(this)">Thailand-Cambodia Border Clashes Escalate</button>
+                        <div class="news-summary-container">
+                            <p class="news-summary-short">Deadly clashes continue for a third day along the Thai-Cambodian border, leading to significant casualties and thousands fleeing their homes.</p>
+                            <p class="news-summary-full">For the third consecutive day, violent clashes have erupted along the border separating Thailand and Cambodia. The ongoing conflict has resulted in numerous casualties and forced thousands of residents to evacuate their homes. The severity of the situation has prompted the **UN Security Council** to hold an emergency meeting, while **Malaysia** has stepped forward with an offer to mediate and help resolve the escalating tensions between the two nations.</p>
+                            <button class="read-more-button" onclick="toggleSummary(this)">Read More</button>
+                        </div>
+                        <button class="read-aloud-button" onclick="readAloud(this)">
+                            <i class="fas fa-volume-up"></i> Read Aloud
+                        </button>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <img src="https://via.placeholder.com/160x110?text=Gaza+Aid" alt="Gaza Aid Relief" class="news-item-image">
+                    <div class="news-item-content">
+                        <p class="original-headline">Original Headline: Humanitarian Crisis Deepens in Gaza Amid Stalled Ceasefire Talks</p>
+                        <button class="headline-button" onclick="toggleSummary(this)">Gaza Humanitarian Crisis Deepens</button>
+                        <div class="news-summary-container">
+                            <p class="news-summary-short">Aid agencies warn of mass starvation in Gaza as ceasefire talks remain stalled, with reports of children dying from hunger.</p>
+                            <p class="news-summary-full">The humanitarian situation in Gaza has reached critical levels, with aid agencies issuing dire warnings about **mass starvation**. Disturbing reports of children succumbing to hunger are emerging as **ceasefire talks** continue to face significant obstacles. There are growing international demands for an immediate lifting of the blockade to allow crucial aid to reach the besieged population.</p>
+                            <button class="read-more-button" onclick="toggleSummary(this)">Read More</button>
+                        </div>
+                        <button class="read-aloud-button" onclick="readAloud(this)">
+                            <i class="fas fa-volume-up"></i> Read Aloud
+                        </button>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <img src="https://via.placeholder.com/160x110?text=Iran+Attack" alt="Iran Courthouse Attack" class="news-item-image">
+                    <div class="news-item-content">
+                        <p class="original-headline">Original Headline: Courthouse Attack in Iran Kills Six, Including Mother and Child</p>
+                        <button class="headline-button" onclick="toggleSummary(this)">Iran Courthouse Attack Claims Lives</button>
+                        <div class="news-summary-container">
+                            <p class="news-summary-short">Unknown gunmen attacked a courthouse in Zahedan, southeast Iran, killing at least six people, including a mother and child.</p>
+                            <p class="news-summary-full">A tragic incident unfolded in **Zahedan**, a city in southeast Iran, where unknown gunmen launched an attack on a local courthouse. The assault resulted in the deaths of at least six individuals, among them a mother and her child, highlighting the volatile security situation in the region.</p>
+                            <button class="read-more-button" onclick="toggleSummary(this)">Read More</button>
+                        </div>
+                        <button class="read-aloud-button" onclick="readAloud(this)">
+                            <i class="fas fa-volume-up"></i> Read Aloud
+                        </button>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <img src="https://via.placeholder.com/160x110?text=Taiwan+Vote" alt="Taiwan Voting" class="news-item-image">
+                    <div class="news-item-content">
+                        <p class="original-headline">Original Headline: Taiwan Votes on Recall of Opposition Lawmakers</p>
+                        <button class="headline-button" onclick="toggleSummary(this)">Taiwan Voters Decide Fate of Pro-China Lawmakers</button>
+                        <div class="news-summary-container">
+                            <p class="news-summary-short">Voters in Taiwan are deciding whether to recall 31 China-friendly lawmakers from the opposition party in a closely watched election.</p>
+                            <p class="news-summary-full">A significant election is underway in **Taiwan**, where citizens are casting their votes on whether to **recall** 31 lawmakers belonging to the opposition party. These legislators are perceived as being **China-friendly**, and the outcome of this closely watched election could have considerable implications for Taiwan's political landscape and its relationship with mainland China.</p>
+                            <button class="read-more-button" onclick="toggleSummary(this)">Read More</button>
+                        </div>
+                        <button class="read-aloud-button" onclick="readAloud(this)">
+                            <i class="fas fa-volume-up"></i> Read Aloud
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            ---
+
+            <section class="brazil-section">
+                <h2>Spotlight: Brazil</h2>
+
+                <div class="news-item">
+                    <img src="https://via.placeholder.com/160x110?text=Brazil+Tariffs" alt="Brazilian Goods" class="news-item-image">
+                    <div class="news-item-content">
+                        <p class="original-headline">Original Headline: Trump's Tariff Threats Loom Over Brazilian Economy</p>
+                        <button class="headline-button" onclick="toggleSummary(this)">Trump's Tariffs Threaten Brazil</button>
+                        <div class="news-summary-container">
+                            <p class="news-summary-short">The looming 50% tariff threatened by President Trump on Brazilian goods remains a major concern.</p>
+                            <p class="news-summary-full">The specter of a **50% tariff** on Brazilian goods, a threat issued by President Trump, continues to hang over Brazil's economy. Brazilian President Lula has indicated a willingness to **negotiate**, emphasizing that the world does not "want an emperor." Analysts caution that these tariffs could severely impact **small-scale coffee producers** in Brazil and potentially push the country to strengthen its economic ties with China.</p>
+                            <button class="read-more-button" onclick="toggleSummary(this)">Read More</button>
+                        </div>
+                        <button class="read-aloud-button" onclick="readAloud(this)">
+                            <i class="fas fa-volume-up"></i> Read Aloud
+                        </button>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <img src="https://via.placeholder.com/160x110?text=Bolsonaro+Trial" alt="Jair Bolsonaro" class="news-item-image">
+                    <div class="news-item-content">
+                        <p class="original-headline">Original Headline: Bolsonaro Faces Criminal Trial for Alleged Coup Plot</p>
+                        <button class="headline-button" onclick="toggleSummary(this)">Bolsonaro's Legal Troubles Deepen</button>
+                        <div class="news-summary-container">
+                            <p class="news-summary-short">Former Brazilian President Jair Bolsonaro is on trial for an alleged coup plot and attempting to poison his successor.</p>
+                            <p class="news-summary-full">Former Brazilian President **Jair Bolsonaro** is currently facing a criminal trial. He is accused of an alleged **coup plot** and attempting to poison his successor. The United States has reportedly placed **visa restrictions** on Brazilian officials believed to be involved in what it describes as a "witch-hunt" against Bolsonaro, while Donald Trump has publicly come to his defense.</p>
+                            <button class="read-more-button" onclick="toggleSummary(this)">Read More</button>
+                        </div>
+                        <button class="read-aloud-button" onclick="readAloud(this)">
+                            <i class="fas fa-volume-up"></i> Read Aloud
+                        </button>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <img src="https://via.placeholder.com/160x110?text=Brazil+ICJ" alt="International Court of Justice" class="news-item-image">
+                    <div class="news-item-content">
+                        <p class="original-headline">Original Headline: Brazil Joins ICJ "Genocide" Case Against Israel</p>
+                        <button class="headline-button" onclick="toggleSummary(this)">Brazil Joins ICJ Genocide Case</button>
+                        <div class="news-summary-container">
+                            <p class="news-summary-short">Brazil intends to join South Africa's case against Israel at the International Court of Justice, accusing Israel of genocide.</p>
+                            <p class="news-summary-full">Brazil has officially announced its decision to join **South Africa's case against Israel** at the **International Court of Justice (ICJ)**. The case accuses Israel of **genocide**, marking a significant diplomatic move by Brazil on the international stage concerning the ongoing conflict.</p>
+                            <button class="read-more-button" onclick="toggleSummary(this)">Read More</button>
+                        </div>
+                        <button class="read-aloud-button" onclick="readAloud(this)">
+                            <i class="fas fa-volume-up"></i> Read Aloud
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            ---
+
+            <section class="trump-section">
+                <h2>Spotlight: Donald Trump</h2>
+
+                <div class="news-item">
+                    <img src="https://via.placeholder.com/160x110?text=Trump+Immigration" alt="Trump on Immigration" class="news-item-image">
+                    <div class="news-item-content">
+                        <p class="original-headline">Original Headline: Trump Criticizes European Immigration During Scotland Trip</p>
+                        <button class="headline-button" onclick="toggleSummary(this)">Trump Slams European Immigration</button>
+                        <div class="news-summary-container">
+                            <p class="news-summary-short">During his trip to Scotland, President Trump criticized European leaders over mass immigration, calling it a "horrible invasion."</p>
+                            <p class="news-summary-full">During a recent visit to Scotland, President Trump vocally criticized **European leaders** regarding their immigration policies. He described **mass immigration** as a "horrible invasion" that is "killing" the continent, reiterating his strong stance on border control and national sovereignty.</p>
+                            <button class="read-more-button" onclick="toggleSummary(this)">Read More</button>
+                        </div>
+                        <button class="read-aloud-button" onclick="readAloud(this)">
+                            <i class="fas fa-volume-up"></i> Read Aloud
+                        </button>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <img src="https://via.placeholder.com/160x110?text=Trump+Orders" alt="Executive Orders" class="news-item-image">
+                    <div class="news-item-content">
+                        <p class="original-headline">Original Headline: Trump Issues New Executive Orders, Rescinds Others</p>
+                        <button class="headline-button" onclick="toggleSummary(this)">Trump Issues New Executive Orders</button>
+                        <div class="news-summary-container">
+                            <p class="news-summary-short">The Trump administration continues to issue executive orders, including one allowing removal of homeless people from streets.</p>
+                            <p class="news-summary-full">The Trump administration has continued its trend of issuing **executive orders**, including a controversial one that grants cities and states the authority to **remove homeless individuals from public streets**. Additionally, he signed a **rescissions package**, which reportedly slashes billions in foreign aid and funding for public media, reflecting his administration's budgetary priorities.</p>
+                            <button class="read-more-button" onclick="toggleSummary(this)">Read More</button>
+                        </div>
+                        <button class="read-aloud-button" onclick="readAloud(this)">
+                            <i class="fas fa-volume-up"></i> Read Aloud
+                        </button>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <img src="https://via.placeholder.com/160x110?text=Epstein+Case" alt="Jeffrey Epstein" class="news-item-image">
+                    <div class="news-item-content">
+                        <p class="original-headline">Original Headline: Epstein Case Revelations Continue to Impact Prominent Figures</p>
+                        <button class="headline-button" onclick="toggleSummary(this)">Epstein Fallout Persists</button>
+                        <div class="news-summary-container">
+                            <p class="news-summary-short">Revelations from the Epstein case continue, with prominent figures, including Bill Clinton, named in Epstein's "birthday book."</p>
+                            <p class="news-summary-full">The ramifications of the **Epstein case** continue to unfold, with ongoing revelations impacting numerous prominent figures. Reports have surfaced naming individuals such as former President **Bill Clinton** in Epstein's "birthday book," leading to renewed public scrutiny. The White House has openly expressed frustration over the extensive media coverage surrounding these developments.</p>
+                            <button class="read-more-button" onclick="toggleSummary(this)">Read More</button>
+                        </div>
+                        <button class="read-aloud-button" onclick="readAloud(this)">
+                            <i class="fas fa-volume-up"></i> Read Aloud
+                        </button>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <img src="https://via.placeholder.com/160x110?text=Trump+Tariffs" alt="Trade Negotiations" class="news-item-image">
+                    <div class="news-item-content">
+                        <p class="original-headline">Original Headline: Trump Pushes New Trade Deals, Threatens Tariffs</p>
+                        <button class="headline-button" onclick="toggleSummary(this)">Trump's Trade Offensive</button>
+                        <div class="news-summary-container">
+                            <p class="news-summary-short">Trump is actively pursuing new trade deals and has signaled a willingness to use tariffs as leverage.</p>
+                            <p class="news-summary-full">Donald Trump is actively engaged in pursuing new **trade deals** with various nations, including a potential agreement with Europe. He has clearly indicated his readiness to deploy **tariffs as leverage**, as demonstrated by his recent threats against Brazil and past actions concerning Canada and the Philippines, underscoring his aggressive approach to international trade.</p>
+                            <button class="read-more-button" onclick="toggleSummary(this)">Read More</button>
+                        </div>
+                        <button class="read-aloud-button" onclick="readAloud(this)">
+                            <i class="fas fa-volume-up"></i> Read Aloud
+                        </button>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <img src="https://via.placeholder.com/160x110?text=Trump+Judiciary" alt="Legal Challenges" class="news-item-image">
+                    <div class="news-item-content">
+                        <p class="original-headline">Original Headline: Federal Judge Blocks Trump's Birthright Citizenship Restriction</p>
+                        <button class="headline-button" onclick="toggleSummary(this)">Trump's Legal Challenges Mount</button>
+                        <div class="news-summary-container">
+                            <p class="news-summary-short">A federal judge blocked Trump's birthright citizenship restrictions for a third time, indicating a potential Supreme Court clash.</p>
+                            <p class="news-summary-full">President Trump continues to face significant **legal challenges**, with a federal judge having now blocked his **birthright citizenship restrictions** for a third time. This repeated judicial rejection signals a potential high-stakes clash with the **Supreme Court**, as the administration seeks to implement its policy.</p>
+                            <button class="read-more-button" onclick="toggleSummary(this)">Read More</button>
+                        </div>
+                        <button class="read-aloud-button" onclick="readAloud(this)">
+                            <i class="fas fa-volume-up"></i> Read Aloud
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <hr>
+
+            <section id="vocabulary-section" class="exercises-section">
+                <h2>Expand Your Vocabulary</h2>
+                <p>Improve your English with key terms from this week's news. Click to reveal definitions and example sentences!</p>
+
+                <div class="vocabulary-dropdown">
+                    <details>
+                        <summary class="vocabulary-summary">Global News Vocabulary</summary>
+                        <div class="vocabulary-content">
+                            <ul>
+                                <li><strong>Escalate</strong> (verb): To increase rapidly; to intensify.
+                                    <br><em>Example: Tensions **escalated** quickly after the border incident.</em></li>
+                                <li><strong>Casualties</strong> (noun): Persons killed or injured in a war or accident.
+                                    <br><em>Example: The conflict resulted in a high number of **casualties**.</em></li>
+                                <li><strong>Mediate</strong> (verb): To intervene between people or groups in a dispute to bring about an agreement.
+                                    <br><em>Example: The UN offered to **mediate** the peace talks.</em></li>
+                                <li><strong>Humanitarian Crisis</strong> (noun phrase): A single event or a series of events that are threatening in terms of health, safety, or well-being of a community or large group of people.
+                                    <br><em>Example: The region is experiencing a severe **humanitarian crisis** due to lack of food and water.</em></li>
+                                <li><strong>Stall</strong> (verb): To stop making progress or developing.
+                                    <br><em>Example: Peace negotiations have **stalled** due to disagreements.</em></li>
+                                <li><strong>Blockade</strong> (noun): An act or means of sealing off a place to prevent goods or people from entering or leaving.
+                                    <br><em>Example: The **blockade** has severely restricted the flow of essential supplies.</em></li>
+                                <li><strong>Recall</strong> (verb): To officially order someone to return to a place, or to bring someone back from a political position.
+                                    <br><em>Example: Voters decided to **recall** the representative after public outcry.</em></li>
+                                <li><strong>Pro-China</strong> (adjective): Supporting or favoring China.
+                                    <br><em>Example: The **pro-China** faction pushed for closer economic ties.</em></li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="vocabulary-dropdown">
+                    <details>
+                        <summary class="vocabulary-summary">Brazil & Trump Specific Vocabulary</summary>
+                        <div class="vocabulary-content">
+                            <ul>
+                                <li><strong>Looming</strong> (adjective): Appearing as a shadowy form, especially one that is large or threatening; about to happen.
+                                    <br><em>Example: The **looming** economic recession worried investors.</em></li>
+                                <li><strong>Tariff</strong> (noun): A tax or duty to be paid on a particular class of imports or exports.
+                                    <br><em>Example: The government imposed a new **tariff** on imported steel.</em></li>
+                                <li><strong>Devastate</strong> (verb): To destroy or cause severe damage or suffering to.
+                                    <br><em>Example: The storm could **devastate** the coastal communities.</em></li>
+                                <li><strong>Coup Plot</strong> (noun phrase): A secret plan to overthrow a government.
+                                    <br><em>Example: Security services uncovered a **coup plot** against the president.</em></li>
+                                <li><strong>Witch-hunt</strong> (noun): A campaign directed against a person or group holding unpopular views.
+                                    <br><em>Example: He claimed the investigation was a political **witch-hunt**.</em></li>
+                                <li><strong>Scrutiny</strong> (noun): Critical observation or examination.
+                                    <br><em>Example: The company's accounts are under close **scrutiny**.</em></li>
+                                <li><strong>Ramifications</strong> (noun): A complex or unwelcome consequence of an action or event.
+                                    <br><em>Example: The new policy had unexpected **ramifications** for the entire industry.</em></li>
+                                <li><strong>Leverage</strong> (noun): Power to influence a person or situation.
+                                    <br><em>Example: She used her position to gain **leverage** in the negotiations.</em></li>
+                                <li><strong>Birthright Citizenship</strong> (noun phrase): A legal principle by which a person is granted citizenship of a country by virtue of having been born there.
+                                    <br><em>Example: The debate over **birthright citizenship** is a contentious issue.</em></li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+                <p class="discussion-prompt"><strong>Discussion Prompt:</strong> Choose three new words you learned. How can you use them in a sentence related to current events or your daily life?</p>
+            </section>
+
+            ---
+
+            <section id="exercises-section" class="exercises-section">
+                <h2>English Language Exercises</h2>
+                <div class="exercise-score">Score: <span id="currentScore">0</span> / <span id="maxScore">0</span></div>
+
+                <div class="exercise-container">
+                    <h4>Exercise 1: Fill-in-the-Blanks (Type the correct word)</h4>
+                    <p class="exercise-question">1. The ongoing conflict could rapidly <input type="text" class="exercise-input" id="q1" data-answer="escalate"> if no agreement is reached. <span id="q1-feedback" class="feedback"></span></p>
+                    <p class="exercise-question">2. Aid agencies are warning of a deepening <input type="text" class="exercise-input" id="q2" data-answer="humanitarian crisis"> in the besieged city. <span id="q2-feedback" class="feedback"></span></p>
+                    <p class="exercise-question">3. President Trump threatened a new <input type="text" class="exercise-input" id="q3" data-answer="tariff"> on imported goods. <span id="q3-feedback" class="feedback"></span></p>
+                    <p class="exercise-question">4. The former president is facing trial for an alleged <input type="text" class="exercise-input" id="q4" data-answer="coup plot">. <span id="q4-feedback" class="feedback"></span></p>
+                    <div class="exercise-buttons">
+                        <button onclick="checkBlanks()">Check Answers</button>
+                        <button onclick="resetBlanks()">Reset</button>
+                    </div>
+                </div>
+
+                <div class="exercise-container">
+                    <h4>Exercise 2: Drag and Drop (Match the word to the blank)</h4>
+                    <div class="draggable-words" id="draggableWords">
+                        <div class="draggable-word" draggable="true" data-word="Mediate">Mediate</div>
+                        <div class="draggable-word" draggable="true" data-word="Casualties">Casualties</div>
+                        <div class="draggable-word" draggable="true" data-word="Looming">Looming</div>
+                        <div class="draggable-word" draggable="true" data-word="Blockade">Blockade</div>
+                    </div>
+                    <p class="exercise-question">
+                        1. Malaysia has offered to <span class="droppable-blank" data-correct="Mediate"></span> between the warring nations.
+                    </p>
+                    <p class="exercise-question">
+                        2. The recent clashes resulted in numerous <span class="droppable-blank" data-correct="Casualties"></span> on both sides.
+                    </p>
+                    <p class="exercise-question">
+                        3. The <span class="droppable-blank" data-correct="Looming"></span> threat of tariffs has worried the local businesses.
+                    </p>
+                    <p class="exercise-question">
+                        4. International calls are growing for the lifting of the <span class="droppable-blank" data-correct="Blockade"></span> to allow aid to enter.
+                    </p>
+                    <div class="exercise-buttons">
+                        <button onclick="checkDragAndDrop()">Check Answers</button>
+                        <button onclick="resetDragAndDrop()">Reset</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Global Pulse. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Contact Us</a></p>
+        </div>
+    </footer>
+
+    <div id="headlinesModalOverlay">
+        <div id="headlinesModalContent">
+            <h3>All Global Headlines</h3>
+            <div id="headlinesList" style="text-align: left; max-height: 400px; overflow-y: auto; padding-right: 15px;">
+                </div>
+            <button onclick="closeHeadlinesModal()" style="margin-top: 30px;">Close</button>
+        </div>
+    </div>
+
+    <div id="messageBoxOverlay" class="message-box-overlay">
+        <div class="message-box-content">
+            <h4 id="messageBoxTitle"></h4>
+            <p id="messageBoxText"></p>
+            <button onclick="closeMessageBox()">OK</button>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Function to toggle summary visibility
+        function toggleSummary(button) {
+            const container = button.parentNode.querySelector('.news-summary-container');
+            container.classList.toggle('expanded');
+            if (container.classList.contains('expanded')) {
+                button.textContent = 'Read Less';
+            } else {
+                button.textContent = 'Read More';
+            }
+        }
+
+        // Text-to-speech function
+        function readAloud(button) {
+            const newsSummaryElement = button.closest('.news-item-content').querySelector('.news-summary-container .news-summary-full');
+            const newsSummaryText = newsSummaryElement.textContent;
+
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(newsSummaryText);
+                utterance.lang = 'en-US'; // Set language to English (US)
+                speechSynthesis.speak(utterance);
+            } else {
+                alert('Text-to-speech is not supported in your browser.');
+            }
+        }
+
+        // Message Box Functions
+        const messageBoxOverlay = document.getElementById('messageBoxOverlay');
+        const messageBoxTitle = document.getElementById('messageBoxTitle');
+        const messageBoxText = document.getElementById('messageBoxText');
+
+        function showMessageBox(title, text) {
+            messageBoxTitle.textContent = title;
+            messageBoxText.textContent = text;
+            messageBoxOverlay.classList.add('show');
+        }
+
+        function closeMessageBox() {
+            messageBoxOverlay.classList.remove('show');
+        }
+
+        // Fill-in-the-Blanks Exercise Logic
+        function checkBlanks() {
+            let correctCount = 0;
+            const questions = [
+                { id: 'q1', answer: 'escalate' },
+                { id: 'q2', answer: 'humanitarian crisis' },
+                { id: 'q3', answer: 'tariff' },
+                { id: 'q4', answer: 'coup plot' }
+            ];
+
+            questions.forEach(q => {
+                const input = document.getElementById(q.id);
+                const feedback = document.getElementById(`${q.id}-feedback`);
+                const userAnswer = input.value.trim().toLowerCase();
+
+                input.classList.remove('input-correct', 'input-incorrect');
+                feedback.textContent = ''; // Clear previous feedback
+
+                if (userAnswer === q.answer) {
+                    input.classList.add('input-correct');
+                    feedback.textContent = 'Correct!';
+                    correctCount++;
+                } else {
+                    input.classList.add('input-incorrect');
+                    feedback.textContent = `Incorrect. Correct answer: ${q.answer}`;
+                }
+            });
+            updateScore(correctCount, questions.length);
+        }
+
+        function resetBlanks() {
+            const inputs = document.querySelectorAll('.exercise-input');
+            inputs.forEach(input => {
+                input.value = '';
+                input.classList.remove('input-correct', 'input-incorrect');
+                document.getElementById(`${input.id}-feedback`).textContent = '';
+            });
+            updateScore(0, 0); // Reset score
+        }
+
+        // Drag and Drop Exercise Logic
+        let draggedItem = null;
+
+        document.querySelectorAll('.draggable-word').forEach(word => {
+            word.addEventListener('dragstart', (e) => {
+                draggedItem = e.target;
+                setTimeout(() => {
+                    e.target.classList.add('dragging');
+                }, 0);
+            });
+
+            word.addEventListener('dragend', (e) => {
+                e.target.classList.remove('dragging');
+                draggedItem = null;
+            });
+        });
+
+        document.querySelectorAll('.droppable-blank').forEach(blank => {
+            blank.addEventListener('dragover', (e) => {
+                e.preventDefault(); // Allow drop
+                blank.classList.add('drag-over');
+            });
+
+            blank.addEventListener('dragleave', () => {
+                blank.classList.remove('drag-over');
+            });
+
+            blank.addEventListener('drop', (e) => {
+                e.preventDefault();
+                blank.classList.remove('drag-over');
+
+                if (draggedItem) {
+                    // Only allow drop if the blank is empty
+                    if (!blank.textContent.trim()) {
+                        blank.textContent = draggedItem.dataset.word;
+                        draggedItem.style.display = 'none'; // Hide the dragged word from the draggable pool
+                    }
+                }
+            });
+        });
+
+        function checkDragAndDrop() {
+            let correctCount = 0;
+            const blanks = document.querySelectorAll('.droppable-blank');
+            const totalBlanks = blanks.length;
+
+            blanks.forEach(blank => {
+                blank.classList.remove('correct-drop', 'incorrect-drop');
+                const droppedWord = blank.textContent.trim();
+                const correctAnswer = blank.dataset.correct;
+
+                if (droppedWord.toLowerCase() === correctAnswer.toLowerCase()) {
+                    blank.classList.add('correct-drop');
+                    correctCount++;
+                } else if (droppedWord !== '') { // Mark as incorrect only if something was dropped
+                    blank.classList.add('incorrect-drop');
+                }
+            });
+            updateScore(correctCount, totalBlanks);
+        }
+
+        function resetDragAndDrop() {
+            document.querySelectorAll('.droppable-blank').forEach(blank => {
+                blank.textContent = '';
+                blank.classList.remove('correct-drop', 'incorrect-drop');
+            });
+            document.querySelectorAll('.draggable-word').forEach(word => {
+                word.style.display = 'inline-block'; // Show all draggable words again
+            });
+            updateScore(0, 0); // Reset score
+        }
+
+        // Score Update Function
+        function updateScore(correct, total) {
+            const currentScoreSpan = document.getElementById('currentScore');
+            const maxScoreSpan = document.getElementById('maxScore');
+            currentScoreSpan.textContent = correct;
+            maxScoreSpan.textContent = total;
+        }
+
+        // Headlines Modal Functionality
+        const headlinesModalOverlay = document.getElementById('headlinesModalOverlay');
+        const headlinesList = document.getElementById('headlinesList');
+
+        function openHeadlinesModal() {
+            headlinesList.innerHTML = ''; // Clear previous headlines
+
+            const newsItems = document.querySelectorAll('.news-item');
+            newsItems.forEach(item => {
+                const headlineButton = item.querySelector('.headline-button');
+                const fullSummary = item.querySelector('.news-summary-full').textContent;
+
+                const headlineDiv = document.createElement('div');
+                headlineDiv.style.marginBottom = '20px';
+                headlineDiv.style.paddingBottom = '15px';
+                headlineDiv.style.borderBottom = '1px dashed rgba(0, 234, 255, 0.1)';
+
+                const headlineText = document.createElement('h4');
+                headlineText.textContent = headlineButton.textContent;
+                headlineText.style.color = '#66ffff';
+                headlineText.style.marginBottom = '10px';
+                headlineText.style.textAlign = 'left';
+
+                const summaryText = document.createElement('p');
+                summaryText.textContent = fullSummary;
+                summaryText.style.fontSize = '0.95em';
+                summaryText.style.textAlign = 'left';
+
+                headlineDiv.appendChild(headlineText);
+                headlineDiv.appendChild(summaryText);
+                headlinesList.appendChild(headlineDiv);
+            });
+
+            headlinesModalOverlay.classList.add('show');
+        }
+
+        function closeHeadlinesModal() {
+            headlinesModalOverlay.classList.remove('show');
+        }
+    </script>
+</body>
+</html>
